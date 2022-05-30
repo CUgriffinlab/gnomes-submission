@@ -21,4 +21,4 @@ jobs:
     - name: Unit Tests
       run: |
         cd testing
-        python test_submisison.py
+        python test_submission.py
