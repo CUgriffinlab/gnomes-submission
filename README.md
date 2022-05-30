@@ -1,21 +1,14 @@
 # career-comp-submission
-Submission Template for NSF Career Competition
+This repository will track your official submission to the NSF Career Competition. You are to only change `submission/submission.py`. Also included in this repository are materials to allow you to test if your submission will succesfully simulate as well as get an idea for how your submission will do on training data. 
 
-# Goal Layout
+# How to test your submission
+1. Clone the repository using `$ git clone https://github.com/kravitsjacob/career-comp-submission.git`
+2. Change to the current working directory using `$ cd career-comp-submission`
+3. Install an editable version of paxplot `$ pip install --editable .`
+4. Change into testing directory `$ cd testing`
+5. Run the tests `$ python test_submission.py`
 
-README - summary of how to use
-submission.py - what users will actually change
-Testing - a bunch of tests that submission.py will need to pass
-	test_1.py
-	test_2.py 
-Training data
-	weather data
-Simulation
-	dockerfile
-		download drag
-	supporting files
+These test will also run automatically whenever pushes are made to this repository. 
 
-User can
-* Edit submission.py
-* Run unittests for submission.py so that it successfully runs
-* Run simulations with different training data/random seeds
+# How test your submission's performance on training simulation
+Instructions for docker simulation
