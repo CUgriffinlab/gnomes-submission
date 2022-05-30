@@ -16,7 +16,7 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    package_dir={"": "submisison"},
+    package_dir={"": "submission"},
     packages=setuptools.find_packages(where="submission"),
     python_requires=">=3.7",
 )
