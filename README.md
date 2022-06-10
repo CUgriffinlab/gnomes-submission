@@ -11,4 +11,9 @@ This repository will track your official submission to the NSF Career Competitio
 These test will also run automatically whenever pushes are made to this repository. 
 
 # How test your submission's performance on training simulation
-Instructions for docker simulation
+This tutorial assumes the use of gitbash or a Unix-like terminal with github command line usage
+1. Clone the repository using `$ git clone https://github.com/kravitsjacob/dragg-comp-submission.git`
+2. Download and Run Docker Desktop. For more information on Docker visit: https://docs.docker.com/desktop/. To ensure 
+that it is installed correctly go to your Unix-like terminal and enter `$ docker --version`
+3. Change to the current working directory using command prompt/terminal `$ cd dragg-comp-submission/training_simulation`
+4. Run the simulation using `$ bash simulation.sh`
