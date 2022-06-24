@@ -2,9 +2,15 @@ version: '3'
 services:
   dragg:
     build: .
+    environment:
+    - REDIS_HOST=redis
+    - localhost=6397
     depends_on:
       - redis
+    ports:
+      - "6379:6379"
   redis:
     image: redis
+
 
 

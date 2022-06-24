@@ -6,11 +6,13 @@ RUN pip install dragg
 
 # Install dragg-comp
 RUN pip install dragg-comp
+RUN pip install cvxopt
 
 # Add local dragg-comp (TODO change dragg-comp to general toolset)
 ADD dragg_comp /dragg_comp
 
 # Run simulation
+EXPOSE 6379
 WORKDIR  /dragg_comp
-# RUN python player.py
-# RUN python rl_aggregator.py &
+CMD python rl_aggregator.py
+#CMD python player.py & python rl_aggregator.py
