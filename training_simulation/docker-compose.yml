@@ -1,5 +1,14 @@
 version: '3'
+
 services:
+
+  redis:
+    image: redis
+    ports:
+      - 6379
+    networks:
+      - app-tier
+
   dragg:
     build: .
     environment:
@@ -7,10 +16,9 @@ services:
     - localhost=6397
     depends_on:
       - redis
-    ports:
-      - "6379:6379"
-  redis:
-    image: redis
+    networks:
+      - app-tier
 
-
-
+networks:
+  app-tier:
+    driver: bridge

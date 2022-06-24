@@ -1,5 +1,5 @@
 # Install python
-FROM python:3
+FROM python:3.8
 
 # Install dragg
 RUN pip install dragg
@@ -14,5 +14,4 @@ ADD dragg_comp /dragg_comp
 # Run simulation
 EXPOSE 6379
 WORKDIR  /dragg_comp
-CMD python rl_aggregator.py
-#CMD python player.py & python rl_aggregator.py
+CMD python player.py & python rl_aggregator.py

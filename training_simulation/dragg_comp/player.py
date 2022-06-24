@@ -22,7 +22,8 @@ from dragg.logger import Logger
 from dragg.mpc_calc import MPCCalc
 from dragg_comp.agent import RandomAgent
 
-REDIS_URL = "redis://localhost"
+#REDIS_URL = "redis://localhost"
+REDIS_URL = "redis://redis"
 
 class PlayerHome(gym.Env):
     def __init__(self):
@@ -178,10 +179,12 @@ class PlayerHome(gym.Env):
         return 
 
 if __name__=="__main__":
+    print('FOOBAR1')
     tic = datetime.now()
+    print('FOOBAR2')
     my_home = PlayerHome()
+    print('FOOBAR4')
     agent = RandomAgent(my_home)
-
     for _ in range(my_home.num_timesteps * my_home.home.dt):
         action = my_home.action_space.sample()
         my_home.step() 

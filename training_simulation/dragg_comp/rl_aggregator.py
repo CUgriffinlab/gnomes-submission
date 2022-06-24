@@ -26,7 +26,8 @@ from dragg.aggregator import Aggregator
 from dragg.redis_client import RedisClient
 from dragg.logger import Logger
 
-REDIS_URL = "redis://localhost"
+#REDIS_URL = "redis://localhost"
+REDIS_URL = "redis://redis"
 
 class RLAggregator(Aggregator):
     def __init__(self):
@@ -184,11 +185,10 @@ class RLAggregator(Aggregator):
         self.reset_collected_data()
         
         print("starting aioredis listener")
-        redis = aioredis.from_url("redis://localhost")
+        redis = aioredis.from_url(REDIS_URL)
         pubsub = redis.pubsub()
         await pubsub.subscribe("channel:1", "channel:2")
         await redis.publish("channel:1", "ready")
-
         await asyncio.create_task(self.await_player(pubsub, redis))
         await asyncio.create_task(self.reader(pubsub, redis))
 
