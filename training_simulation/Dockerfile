@@ -1,5 +1,5 @@
 # Install python
-FROM python:3.8
+FROM python:3.9
 
 # Install dragg
 RUN pip install dragg
