@@ -12,6 +12,5 @@ RUN pip install cvxopt
 ADD dragg_comp /dragg_comp
 
 # Run simulation
-EXPOSE 6379
 WORKDIR  /dragg_comp
 CMD python player.py & python rl_aggregator.py
