@@ -1,17 +1,25 @@
 """Player submission script"""
 
+def my_reward(home):
+        """
+        Reward function
+        """
+        # print(home.obs_dict)
+        reward = home.obs_dict['my_demand'] / 3.5
+        return reward
 
-def reward():
-    """
-    Reward function
-    """
-    print('This is the reward function')
-    return 0
-
-
-def predict():
+def predict(home):
     """
     Predict function
+    :input: the current state of the environment as a list
+    :output:
     """
-    print('This is the predict function')
-    return 0
+    threshold = 2 # kW
+
+    if home.obs_dict['my_demand'] >= threshold:
+        action = [0,0,0] # do nothing
+
+    else: 
+        action = home.action_space.sample() # choose a random action
+
+    return action

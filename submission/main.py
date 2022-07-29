@@ -3,9 +3,8 @@ import asyncio
 import os
 import random
 
-os.system(f"export PYTHONPATH={os.getcwd()}")
-
 from dragg_comp.player import PlayerHome
+from dragg_comp.rl_aggregator import RLAggregator
 from submission import predict, my_reward
 
 class PlayerSubmission(PlayerHome):
@@ -20,7 +19,7 @@ class PlayerSubmission(PlayerHome):
 if __name__=="__main__":
 	tic = datetime.now()
 	env = PlayerSubmission()
-
+	env.reset()
 	for _ in range(env.num_timesteps * env.home.dt):
 	    action = predict(env)
 	    env.step(action) 
