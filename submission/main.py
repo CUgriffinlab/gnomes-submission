@@ -5,7 +5,7 @@ import random
 
 from dragg_comp.player import PlayerHome
 from dragg_comp.rl_aggregator import RLAggregator
-from submission import predict, my_reward
+from submission import predict, reward
 
 class PlayerSubmission(PlayerHome):
 	def __init__(self):
@@ -13,7 +13,7 @@ class PlayerSubmission(PlayerHome):
 
 	def get_reward(self):
 		# redefines get_reward with the player's implementation
-		reward = my_reward(self)
+		reward = reward(self)
 		return reward
 
 if __name__=="__main__":

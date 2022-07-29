@@ -1,6 +1,6 @@
 """Player submission script"""
 
-def my_reward(home):
+def reward(home):
         """
         Reward function
         """
