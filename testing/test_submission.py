@@ -9,13 +9,15 @@ class SubmissionLib(unittest.TestCase):
         """
         General test for reward function
         """
-        self.assertEquals(submission.reward(), 0)
+        home = 0
+        self.assertEquals(submission.reward(home), 0)
 
     def test_predicit(self):
         """
         General test for predict function
         """
-        self.assertEquals(submission.predict(), 0)
+        home = 0
+        self.assertEquals(submission.predict(home), 0)
 
 
 if __name__ == '__main__':
