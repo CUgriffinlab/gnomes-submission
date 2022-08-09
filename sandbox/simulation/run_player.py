@@ -1,7 +1,5 @@
 from datetime import datetime
 import asyncio
-import os
-import random
 import argparse
 
 from dragg_comp.player import PlayerHome

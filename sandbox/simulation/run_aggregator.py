@@ -1,5 +1,4 @@
 import asyncio 
-import sys
 from dragg_comp.rl_aggregator import RLAggregator
 import argparse
 
