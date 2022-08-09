@@ -32,8 +32,8 @@ if __name__=="__main__":
 	env = PlayerSubmission(redis_url=args.redis)
 	env.reset()
 	for _ in range(env.num_timesteps * env.home.dt):
-	    action = predict(env)
-	    env.step(action) 
+		action = predict(env)
+		env.step(action) 
 
 	asyncio.run(env.post_status("done"))
 	toc = datetime.now()
