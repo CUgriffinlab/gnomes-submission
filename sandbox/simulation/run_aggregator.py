@@ -3,7 +3,7 @@ import sys
 from dragg_comp.rl_aggregator import RLAggregator
 import argparse
 
-REDIS_URL = "redis://redis"
+REDIS_URL = "redis://localhost"
 
 if __name__=="__main__":
     parser = argparse.ArgumentParser()
