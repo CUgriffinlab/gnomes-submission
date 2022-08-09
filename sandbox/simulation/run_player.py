@@ -5,7 +5,6 @@ import random
 import argparse
 
 from dragg_comp.player import PlayerHome
-from dragg_comp.rl_aggregator import RLAggregator
 from submission import predict, reward
 
 REDIS_URL = "redis://localhost"
