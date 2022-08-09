@@ -8,13 +8,11 @@ RUN pip install dragg
 RUN pip install dragg-comp
 RUN pip install cvxopt
 
-# Install submission
-# RUN cd ../..
+# Copy parent directory
 ADD . /dragg-comp-submission
-RUN pip install /dragg-comp-submission/.
 
-# Add simulation files
-# ADD simulation sandbox/simulation
+# Install submission
+RUN pip install /dragg-comp-submission/.
 
 # Run simulation
 WORKDIR  /dragg-comp-submission/sandbox/simulation
