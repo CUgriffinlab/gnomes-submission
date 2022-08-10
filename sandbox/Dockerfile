@@ -2,10 +2,10 @@
 FROM python:3.9
 
 # Install dragg
-RUN pip install dragg
+RUN pip install dragg==1.2.2
 
 # Install dragg-comp
-RUN pip install dragg-comp
+RUN pip install dragg-comp==0.2.1
 RUN pip install cvxopt
 
 # Copy parent directory
