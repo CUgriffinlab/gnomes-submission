@@ -1,4 +1,4 @@
-import asyncio 
+import asyncio
 from dragg_comp.rl_aggregator import RLAggregator
 import argparse
 
@@ -12,8 +12,5 @@ if __name__=="__main__":
 
     args = parser.parse_args()
 
-    # if len(sys.argv)>1:
     a = RLAggregator(args.start, args.end, args.redis)
-    # else:
-    #     a = RLAggregator()
     asyncio.run(a.open_server())

@@ -9,7 +9,7 @@ REDIS_URL = "redis://localhost"
 
 class PlayerSubmission(PlayerHome):
 	def __init__(self, redis_url=REDIS_URL):
-		super().__init__()
+		super().__init__(redis_url=redis_url)
 
 	def get_reward(self):
 		# redefines get_reward with the player's implementation
@@ -30,7 +30,7 @@ if __name__=="__main__":
 	env.reset()
 	for _ in range(env.num_timesteps * env.home.dt):
 		action = predict(env)
-		env.step(action) 
+		env.step(action)
 
 	asyncio.run(env.post_status("done"))
 	toc = datetime.now()
