@@ -1,0 +1,20 @@
+{"states":{
+	"temp_in_opt":true,
+	"oat_current":true,
+	"oat_future":true,
+	"time_of_day":true,
+	"leaving_horizon":true,
+	"returning_horizon":true,
+	"occupancy_status":true,
+	"future_waterdraws":true,
+	"e_ev_opt":true,
+	"temp_wh_opt":true,
+	"community_demand":true,
+	"my_demand":true
+	},
+"actions":{
+	"hvac_setpoint":true,
+	"wh_setpoint":true,
+	"ev_charge":true
+	}
+}
