@@ -33,5 +33,6 @@ if __name__=="__main__":
 		env.step(action)
 
 	asyncio.run(env.post_status("done"))
+	print(env.score())
 	toc = datetime.now()
 	print(toc-tic)
