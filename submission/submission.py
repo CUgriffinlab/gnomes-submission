@@ -1,12 +1,12 @@
 """Player submission script"""
 
 def reward(home):
-        """
-        Reward function
-        """
-        # print(home.obs_dict)
-        reward = home.obs_dict['my_demand'] / 3.5
-        return reward
+    """
+    Reward function
+    """
+    # print(home.obs_dict)
+    reward = home.obs_dict['my_demand'] / 3.5
+    return reward
 
 def predict(home):
     """
@@ -20,6 +20,6 @@ def predict(home):
         action = [0,0,0] # do nothing
 
     else: 
-        action = home.action_space.sample() # choose a random action
-
+        action = list(home.action_space.sample()) # choose a random action
+        print(action)
     return action
