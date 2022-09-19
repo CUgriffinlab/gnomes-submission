@@ -8,6 +8,10 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    install_requires=[
+        'gym',
+        'numpy'
+    ],
     package_dir={"": "."},
     packages=setuptools.find_packages(where="."),
     python_requires=">=3.9",
