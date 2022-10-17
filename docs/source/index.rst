@@ -1,9 +1,9 @@
 Welcome to GNOMES4Homes
 =======================
 
-Welcome to GNOMES4Homes / Motivation for the Competition
+ Motivation for the Competition
+--------------------------------------------------------
 [Kyri to write?]
-
 
 
 Contents
@@ -13,3 +13,4 @@ Contents
    :maxdepth: 1
 
    overview
+   tutorial
