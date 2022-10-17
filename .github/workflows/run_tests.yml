@@ -17,6 +17,7 @@ jobs:
         python-version: 3.9
     - name: Local Build
       run: |
+        pip install gym
         pip install -e .
     - name: Unit Tests
       run: |
