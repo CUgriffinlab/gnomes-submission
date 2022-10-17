@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tutorial of Submission &mdash; Competition beta documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Conceptual Overview of DRAGG" href="overview.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Competition
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Conceptual Overview of DRAGG</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial of Submission</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-your-submission">Creating your submission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testing-your-submission-locally">Testing your submission (locally)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submitting-and-receiving-official-feedback">Submitting and receiving official feedback</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Competition</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Tutorial of Submission</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/tutorial.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="tutorial-of-submission">
+<h1>Tutorial of Submission<a class="headerlink" href="#tutorial-of-submission" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>You MUST register your team with the competition hosts. Please email <a class="reference external" href="mailto:cugriffinlab&#37;&#52;&#48;gmail&#46;com">cugriffinlab<span>&#64;</span>gmail<span>&#46;</span>com</a> with:</dt><dd><ul class="simple">
+<li><p>Your team name</p></li>
+<li><p>The names of all teammates</p></li>
+<li><p>The GitHub usernames of all teammates</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>If you do not already have git and a GitHub account create one with the following links:</dt><dd><ol class="arabic simple">
+<li><p>If you do not have a GitHub account, create one now. (<a class="reference external" href="https://github.com">https://github.com</a>)</p></li>
+<li><p>If you do not have it already, download git (<a class="reference external" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>)</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><p>Wait for us to make you a shiny new submission repository! It is important that we maintain ownership of the repository so we will let you know when one is created for you (we will aim to do so within 1 day of your request to join).</p></li>
+<li><p>Copy the repository from GitHub to your computer using git clone:
+* <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/cugriffinlab/YOUR-USERNAME-gnomes</span></code>. This will create a folder called your-username-gnomes with all the files in the your-username-gnomes repository</p></li>
+<li><p>Edit the submission file as described below and then commit/push them to your GitHub repository:
+* <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">submission/submission.py</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">-m</span> <span class="pre">“Custom</span> <span class="pre">message</span> <span class="pre">about</span> <span class="pre">improvement”</span></code>
+* <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">push</span></code></p></li>
+</ol>
+</div>
+<div class="section" id="creating-your-submission">
+<h2>Creating your submission<a class="headerlink" href="#creating-your-submission" title="Permalink to this headline">¶</a></h2>
+<p>For a complete submission you should customize the reward function to evaluate performance and the predict function to determine the action to take.</p>
+<p>While the GNOMES competition will provide holistic feedback on your performance, the reward function can be useful to provide step-by-step feedback on performance. This is similar to how the machine learning algorithm “Reinforcement Learning” works: certain observations and actions can be categorized as “good” or “bad” via the reward observed and you can build intuition without exact knowledge.</p>
+<p>The predict function is more directly related to the performance of the agent and provides the action to be performed at the next timestep. You are predicting the best action(s) to take. The output in three parts describes the action for:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>The HVAC setpoint</p></li>
+<li><p>The water heater on/off status</p></li>
+<li><p>The electric vehicle charge command</p></li>
+</ol>
+</div></blockquote>
+<p>Once you change the submission/submission.py file no further changes need to be made. To be clear: you should only change the contents of submission.py; submission.py is the only file you are allowed to change and it is the only change that will be applicable to the competition performance.</p>
+</div>
+<div class="section" id="testing-your-submission-locally">
+<h2>Testing your submission (locally)<a class="headerlink" href="#testing-your-submission-locally" title="Permalink to this headline">¶</a></h2>
+<p>To test your agent you can run the same simulation setup as the official competition on sandbox data. In real life you won’t be able to test performance on the real (future) weather data before deployment, you only have data from the past. Therefore the data we use to officially score you will be “new”, never seen before weather data (but with the same location and weather trends).</p>
+<blockquote>
+<div><ul>
+<li><p>The steps to ensure the submission file is valid (i.e. no changes have been made that will break the submission):</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Clone the repository using <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/cugriffinlab/your-username-gnomes.git</span></code></p></li>
+<li><p>Change to the current working directory using <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cd</span> <span class="pre">your-username-gnomes</span></code></p></li>
+<li><p>Install an editable version of your submission <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--editable</span> <span class="pre">.</span></code></p></li>
+<li><p>Change into testing directory <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cd</span> <span class="pre">testing</span></code></p></li>
+<li><p>Run the tests <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">python</span> <span class="pre">test_submission.py</span></code></p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>The steps for self-evaluation are as follows:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Download Docker (<a class="reference external" href="https://www.docker.com">https://www.docker.com</a>) which is a free software that allow you to replicate our setup easily. Docker will perform downloads and run the Python files in the order you need, without additional input.</p></li>
+<li><p>Install Docker as directed. The downloaded file (*.exe, *.mkg) should guide you.</p></li>
+<li><p>Check Docker is properly installed: go to your terminal or PowerShell and enter <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">--version</span></code></p></li>
+<li><p>Change to the current working directory using <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cd</span> <span class="pre">dragg-comp-submission/sandbox</span></code></p></li>
+<li><p>Build the simulation using <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker-compose</span> <span class="pre">build</span></code></p></li>
+<li><p>Run the simulation using <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker-compose</span> <span class="pre">up</span> <span class="pre">--abort-on-container-exit</span></code></p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="submitting-and-receiving-official-feedback">
+<h2>Submitting and receiving official feedback<a class="headerlink" href="#submitting-and-receiving-official-feedback" title="Permalink to this headline">¶</a></h2>
+<p>Your submission file must be updated and pushed to your repository in order to get official feedback. The official repository for the GNOMES competition will automatically evaluate all players’ submissions at 5AM Mountain Standard Time, if and only if their GitHub repositories are updated.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="overview.html" class="btn btn-neutral float-left" title="Conceptual Overview of DRAGG" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Jacob Kravits.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

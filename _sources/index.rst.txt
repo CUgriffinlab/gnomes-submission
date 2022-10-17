@@ -1,7 +1,7 @@
 Welcome to GNOMES4Homes
 =======================
 
- Motivation for the Competition
+Motivation for the Competition
 --------------------------------------------------------
 [Kyri to write?]
 
