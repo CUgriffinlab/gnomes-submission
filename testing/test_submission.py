@@ -39,7 +39,7 @@ class SubmissionLib(unittest.TestCase):
         General test for predict function
         """
         home = MockPlayerHome()
-        self.assertIsInstance(submission.predict(home), list, msg="Ensure")
+        self.assertIsInstance(list(submission.predict(home)), list, msg="Ensure")
 
 
 if __name__ == '__main__':
