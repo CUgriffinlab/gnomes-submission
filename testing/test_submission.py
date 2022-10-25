@@ -12,7 +12,7 @@ class MockPlayerHome:
         self.obs_dict = {"t_in_current":True,
             "t_out_current":True,
             "t_out_6hr":True,
-            "t_our_12hr":True,
+            "t_out_12hr":True,
             "h_out":True,
             "h_out_6hr":True,
             "h_out_12hr":True,
