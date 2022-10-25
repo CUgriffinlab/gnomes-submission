@@ -38,7 +38,11 @@
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Conceptual Overview of DRAGG</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial of Submission</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creating-your-submission">Creating your submission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-your-submission">Creating your submission</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-reward-function">The reward function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-predict-function">The predict function</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#testing-your-submission-locally">Testing your submission (locally)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#submitting-and-receiving-official-feedback">Submitting and receiving official feedback</a></li>
 </ul>
@@ -101,9 +105,32 @@
 </div>
 <div class="section" id="creating-your-submission">
 <h2>Creating your submission<a class="headerlink" href="#creating-your-submission" title="Permalink to this headline">¶</a></h2>
-<p>For a complete submission you should customize the reward function to evaluate performance and the predict function to determine the action to take.</p>
-<p>While the GNOMES competition will provide holistic feedback on your performance, the reward function can be useful to provide step-by-step feedback on performance. This is similar to how the machine learning algorithm “Reinforcement Learning” works: certain observations and actions can be categorized as “good” or “bad” via the reward observed and you can build intuition without exact knowledge.</p>
-<p>The predict function is more directly related to the performance of the agent and provides the action to be performed at the next timestep. You are predicting the best action(s) to take. The output in three parts describes the action for:</p>
+<p>For a complete submission you should customize the <cite>reward()</cite> function to evaluate performance and the <cite>predict()</cite> function to determine the action to take. In both of these functions you may use any of the available observations about your home. Here is a list of the valid keys to <cite>home.obs_dict</cite>.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>“t_in_current”, current indoor temperature (deg C)</p></li>
+<li><p>“t_out_current”, current indoor temperature (deg C)</p></li>
+<li><p>“t_out_6hr”, predicted outdoor temperature in 6 hrs (deg C)</p></li>
+<li><p>“t_out_12hr”, predicted outdoor temperature in 12 hrs (deg C)</p></li>
+<li><p>“h_out”, current outdoor humidity (%)</p></li>
+<li><p>“h_out_6hr”, predicted outdoor humidity in 6 hrs (%)</p></li>
+<li><p>“h_out_12hr”, predicted outdoor humidity in 12 hrs (%)</p></li>
+<li><p>“time_of_day”, time of day (0-24)</p></li>
+<li><p>“day_of_week”, day of week (0-6)</p></li>
+<li><p>“occupancy”, true/false value for occupancy status</p></li>
+<li><p>“my_demand”, current net electric consumption (kW)</p></li>
+</ol>
+</div></blockquote>
+<div class="section" id="the-reward-function">
+<h3>The reward function<a class="headerlink" href="#the-reward-function" title="Permalink to this headline">¶</a></h3>
+<p>While the GNOMES competition will provide holistic feedback on your performance, the <cite>reward(home)</cite> function can be useful to provide step-by-step feedback on performance. This is similar to how the machine learning algorithm “Reinforcement Learning” works: certain observations and actions can be categorized as “good” or “bad” (or anywhere in between) via the reward observed and you can build intuition without exact knowledge.</p>
+<p>For example, let’s say the competition reward algorithm was very complicated and nearly impossible to model but you notice it is strongly correlated with a low amount of energy consumed at any given timestep. You can “grade” your agent based off a very simple reward function such as:</p>
+<p><code class="docutils literal notranslate"><span class="pre">reward</span> <span class="pre">=</span> <span class="pre">-1</span> <span class="pre">*</span> <span class="pre">home.obs_dict[&quot;my_demand&quot;]</span></code></p>
+<p>We encourage you to try other transformations to get your home working well. You might look into different optimization objectives that you think could work to approximate the goals of the competition.</p>
+</div>
+<div class="section" id="the-predict-function">
+<h3>The predict function<a class="headerlink" href="#the-predict-function" title="Permalink to this headline">¶</a></h3>
+<p>The <cite>predict(home)</cite> function is more directly related to the performance of the agent and provides the action to be performed at the next timestep. You are predicting the best action(s) to take. The output in three parts describes the action for:</p>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p>The HVAC setpoint</p></li>
@@ -111,7 +138,9 @@
 <li><p>The electric vehicle charge command</p></li>
 </ol>
 </div></blockquote>
+<p>The resulting action should be a list (or array) that is 3 entries long, and each entry should be a number between [-1,1]. For the HVAC this will change the setpoint between the lowest possible value and the highest possible value. For the water heater a low value (-1) will turn the water heater off, and a high value will turn the water heater on whenever possible, intermediate values will correspond to being on part of the time interval (e.g. 0 corresponds to a 50% duty cycle over the 15 minute interval). For the electric vehicle the charge is interpolated between the maximum possible charge (+5kW) and the maximum possible discharge (-5kW).</p>
 <p>Once you change the submission/submission.py file no further changes need to be made. To be clear: you should only change the contents of submission.py; submission.py is the only file you are allowed to change and it is the only change that will be applicable to the competition performance.</p>
+</div>
 </div>
 <div class="section" id="testing-your-submission-locally">
 <h2>Testing your submission (locally)<a class="headerlink" href="#testing-your-submission-locally" title="Permalink to this headline">¶</a></h2>
