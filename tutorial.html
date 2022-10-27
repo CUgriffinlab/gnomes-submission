@@ -150,11 +150,12 @@
 <li><p>The steps to ensure the submission file is valid (i.e. no changes have been made that will break the submission):</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p>Clone the repository using <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/cugriffinlab/your-username-gnomes.git</span></code></p></li>
-<li><p>Change to the current working directory using <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cd</span> <span class="pre">your-username-gnomes</span></code></p></li>
-<li><p>Install an editable version of your submission <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--editable</span> <span class="pre">.</span></code></p></li>
-<li><p>Change into testing directory <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cd</span> <span class="pre">testing</span></code></p></li>
-<li><p>Run the tests <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">python</span> <span class="pre">test_submission.py</span></code></p></li>
+<li><p>Open the Terminal (Mac) or Command Prompt (Windows) application and copy and paste the following commands into the window. Each time press &lt;Enter&gt; to run the command.</p></li>
+<li><p>Optional: Change into the Documents folder. When you open Terminal/Command you will likely be in the home (or ‘C://’ drive), but you can change to Documents with <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">Documents</span></code></p></li>
+<li><p>Clone the repository using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/cugriffinlab/your-username-gnomes.git</span></code></p></li>
+<li><p>Change to the current working directory using <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">your-username-gnomes</span></code></p></li>
+<li><p>Install an editable version of your submission <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--editable</span> <span class="pre">.</span></code></p></li>
+<li><p>Run the tests <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">testing/test_submission.py</span></code></p></li>
 </ol>
 </div></blockquote>
 </li>
@@ -164,9 +165,9 @@
 <li><p>Download Docker (<a class="reference external" href="https://www.docker.com">https://www.docker.com</a>) which is a free software that allow you to replicate our setup easily. Docker will perform downloads and run the Python files in the order you need, without additional input.</p></li>
 <li><p>Install Docker as directed. The downloaded file (*.exe, *.mkg) should guide you.</p></li>
 <li><p>Check Docker is properly installed: go to your terminal or PowerShell and enter <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">--version</span></code></p></li>
-<li><p>Change to the current working directory using <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cd</span> <span class="pre">dragg-comp-submission/sandbox</span></code></p></li>
-<li><p>Build the simulation using <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker-compose</span> <span class="pre">build</span></code></p></li>
-<li><p>Run the simulation using <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker-compose</span> <span class="pre">up</span> <span class="pre">--abort-on-container-exit</span></code></p></li>
+<li><p>Change to the current working directory using <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">dragg-comp-submission/sandbox</span></code></p></li>
+<li><p>Build the simulation using <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">build</span></code></p></li>
+<li><p>Run the simulation using <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">up</span> <span class="pre">--abort-on-container-exit</span></code></p></li>
 </ol>
 </div></blockquote>
 </li>

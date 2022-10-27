@@ -65,20 +65,21 @@ To test your agent you can run the same simulation setup as the official competi
 
 	* The steps to ensure the submission file is valid (i.e. no changes have been made that will break the submission):
 
-		#.	Clone the repository using ``$ git clone https://github.com/cugriffinlab/your-username-gnomes.git``
-		#.	Change to the current working directory using ``$ cd your-username-gnomes``
-		#.	Install an editable version of your submission ``$ pip install --editable .``
-		#.	Change into testing directory ``$ cd testing``
-		#.	Run the tests ``$ python test_submission.py``
+		#.	Open the Terminal (Mac) or Command Prompt (Windows) application and copy and paste the following commands into the window. Each time press <Enter> to run the command.
+		#. 	Optional: Change into the Documents folder. When you open Terminal/Command you will likely be in the home (or 'C://' drive), but you can change to Documents with ``cd Documents`` 
+		#. 	Clone the repository using ``git clone https://github.com/cugriffinlab/your-username-gnomes.git``
+		#.	Change to the current working directory using ``cd your-username-gnomes``
+		#.	Install an editable version of your submission ``pip install --editable .``
+		#.	Run the tests ``python testing/test_submission.py``
 
 	* The steps for self-evaluation are as follows:
 
 		#.	Download Docker (https://www.docker.com) which is a free software that allow you to replicate our setup easily. Docker will perform downloads and run the Python files in the order you need, without additional input.
 		#.	Install Docker as directed. The downloaded file (\*.exe, \*.mkg) should guide you.
 		#.	Check Docker is properly installed: go to your terminal or PowerShell and enter ``$ docker --version``
-		#.	Change to the current working directory using ``$ cd dragg-comp-submission/sandbox``
-		#.	Build the simulation using ``$ docker-compose build``
-		#.	Run the simulation using ``$ docker-compose up --abort-on-container-exit``
+		#.	Change to the current working directory using ``cd dragg-comp-submission/sandbox``
+		#.	Build the simulation using ``docker-compose build``
+		#.	Run the simulation using ``docker-compose up --abort-on-container-exit``
 
 Submitting and receiving official feedback
 -----------------------------------------------------------
