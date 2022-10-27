@@ -84,3 +84,5 @@ To test your agent you can run the same simulation setup as the official competi
 Submitting and receiving official feedback
 -----------------------------------------------------------
 Your submission file must be updated and pushed to your repository in order to get official feedback. The official repository for the GNOMES competition will automatically evaluate all players’ submissions at 5AM Mountain Standard Time, if and only if their GitHub repositories are updated.
+
+Check your score here! https://cugriffinlab.github.io/gnomes-admin/
