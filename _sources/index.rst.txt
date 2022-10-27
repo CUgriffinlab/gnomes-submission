@@ -14,3 +14,4 @@ Contents
 
    overview
    tutorial
+   rules
