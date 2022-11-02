@@ -16,8 +16,11 @@ def predict(home):
     """
     threshold = 2 # kW
 
-    if home.obs_dict['my_demand'] >= threshold:
-        action = [0,0,0] # do nothing
+    if home.obs_dict['occupancy'] == 0:
+        hvac_action = 0 # neutral, leave the hvac alone
+        wh_action = -1 # turn off the water heater
+        ev_action = 1 # charge the car
+        action = [hvac_action, wh_action, ev_action]
 
     else: 
         action = home.action_space.sample() # choose a random action
