@@ -75,8 +75,8 @@ To test your agent you can run the same simulation setup as the official competi
 		#. 	Optional: Change into the Documents folder. When you open Terminal/Command you will likely be in the home (or 'C://' drive), but you can change to Documents with ``cd Documents`` 
 		#. 	Clone the repository using ``git clone https://github.com/cugriffinlab/your-username-gnomes.git``
 		#.	Change to the current working directory using ``cd your-username-gnomes``
-		#.	Install an editable version of your submission ``pip install --editable .``
-		#.	Run the tests ``python testing/test_submission.py``
+		#.	Build the tests using ``docker-compose -f ./testing/docker-compose.yml build``
+		#.	Run the tests using ``docker-compose -f ./testing/docker-compose.yml up --abort-on-container-exit``. Submissions must pass all tests!
 
 	* The steps for self-evaluation are as follows:
 
