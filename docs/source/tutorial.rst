@@ -90,7 +90,10 @@ To test your agent you can run the same simulation setup as the official competi
 		#.	Change to the current working directory using ``cd your-username-gnomes``
 		#.	Build the simulation using ``docker-compose -f ./sandbox/docker-compose.yml build``
 		#.	Run the simulation using ``docker-compose -f ./sandbox/docker-compose.yml up --abort-on-container-exit``
-		#.  The results of the simulation are in the folder ``sandbox/outputs``. [TODO Ash to write more about results]
+		#.  The results of the simulation are in the folder ``sandbox/outputs``. 
+		
+..
+	[TODO Ash to write more about results, when decided]
 
 Submitting and receiving official feedback
 -----------------------------------------------------------
