@@ -19,7 +19,7 @@ class MockPlayerHome:
             "time_of_day":True,
             "day_of_week":True,
             "is_holiday":True,
-            "occupancy":True, 
+            "occupancy_status":True, 
             "my_demand":True}
 
 class SubmissionLib(unittest.TestCase):

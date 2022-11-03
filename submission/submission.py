@@ -16,7 +16,7 @@ def predict(home):
     """
     threshold = 2 # kW
 
-    if home.obs_dict['occupancy'] == 0:
+    if home.obs_dict['occupancy_status'] == 0:
         hvac_action = 0 # neutral, leave the hvac alone
         wh_action = -1 # turn off the water heater
         ev_action = 1 # charge the car
