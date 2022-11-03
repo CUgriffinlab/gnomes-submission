@@ -72,7 +72,9 @@ To test your agent you can run the same simulation setup as the official competi
 	* The steps to ensure the submission file is valid (i.e. no changes have been made that will break the submission):
 
 		#.	Open the Terminal (Mac) or Command Prompt (Windows) application and copy and paste the following commands into the window. Each time press <Enter> to run the command.
-		#. 	Optional: Change into the Documents folder. When you open Terminal/Command you will likely be in the home (or 'C://' drive), but you can change to Documents with ``cd Documents`` 
+		
+			* Optional: Change into the Documents folder. When you open Terminal/Command you will likely be in the home (or 'C://' drive), but you can change to Documents with ``cd Documents`` 
+		
 		#. 	Clone the repository using ``git clone https://github.com/cugriffinlab/your-username-gnomes.git``
 		#.	Change to the current working directory using ``cd your-username-gnomes``
 		#.	Build the tests using ``docker-compose -f ./testing/docker-compose.yml build``
