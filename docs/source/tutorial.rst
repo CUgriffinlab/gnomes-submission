@@ -3,21 +3,27 @@ Tutorial of Submission
 Getting Started
 -------------------------------------------
 #. You MUST register your team with the competition hosts. Please email cugriffinlab@gmail.com with:
+
 	* Your team name
 	* The names of all teammates
-	* The GitHub usernames of all teammates
+	* The GitHub usernames of all teammates. If you do not have a GitHub account, create one `here <https://github.com/join>`_.
 
-#. If you do not already have git and a GitHub account create one with the following links:
-	#.	If you do not have a GitHub account, create one now. (https://github.com) 
-	#.	If you do not have it already, download git (https://git-scm.com/downloads) 
+#. This competition will use `github <https://github.com/about>`_ to track submissions and `docker <https://docs.docker.com/get-started/overview/>`_ to ensure consistency/fairness of simulation enviornments accross participants. Do not worry if this is your first time hearing about either of these, we will be providing step-by-step instructions for their usage.
 
-#. Wait for us to make you a shiny new submission repository! It is important that we maintain ownership of the repository so we will let you know when one is created for you (we will aim to do so within 1 day of your request to join).
+	* Download and configure git following `these instructions <https://docs.github.com/en/get-started/quickstart/set-up-git>`_.
+	* Test your configuration by opening the Terminal (Mac) or PowerShell (Windows) application and copy and paste ``git --version`` into the window. After pressing <Enter>, the current version of git should be printed. If not, email cugriffinlab@gmail.com for help.
+	* Download and configure docker desktop by following `these instructions for mac <https://docs.docker.com/desktop/install/mac-install/>`_ or `these instructions for windows <https://docs.docker.com/desktop/install/windows-install/>`_.
+	* Test your configuration by opening the Terminal (Mac) or PowerShell (Windows) application and copy and paste ``docker --version`` into the window. After pressing <Enter>, the current version of docker should be printed. If not, email cugriffinlab@gmail.com for help.
 
-#.	Copy the repository from GitHub to your computer using git clone:
+#. Wait for us to make you a shiny new submission repository! For security purposes, it is important that we maintain ownership of the repository, so we will let you know when one is created for you (we will aim to do so within 1 day of your request to join).
+
+#. Copy the repository from GitHub to your computer using git clone:
+
 	* ``$ git clone https://github.com/cugriffinlab/YOUR-USERNAME-gnomes``. This will create a folder called your-username-gnomes with all the files in the your-username-gnomes repository
 
-#.	Edit the submission file as described below and then commit/push them to your GitHub repository:
-	* ``$ git commit submission/submission.py	-m “Custom message about improvement”``
+#. Edit the submission file as described below and then commit/push them to your GitHub repository:
+
+	* ``$ git commit submission/submission.py -m “Custom message about improvement”``
 	* ``$ git push``
 
 Creating your submission
@@ -74,12 +80,14 @@ To test your agent you can run the same simulation setup as the official competi
 
 	* The steps for self-evaluation are as follows:
 
-		#.	Download Docker (https://www.docker.com) which is a free software that allow you to replicate our setup easily. Docker will perform downloads and run the Python files in the order you need, without additional input.
-		#.	Install Docker as directed. The downloaded file (\*.exe, \*.mkg) should guide you.
-		#.	Check Docker is properly installed: go to your terminal or PowerShell and enter ``$ docker --version``
-		#.	Change to the current working directory using ``cd dragg-comp-submission/sandbox``
-		#.	Build the simulation using ``docker-compose build``
-		#.	Run the simulation using ``docker-compose up --abort-on-container-exit``
+		#.	Open the Terminal (Mac) or Command Prompt (Windows) application and copy and paste the following commands into the window. Each time press <Enter> to run the command.
+		
+			* Optional: Change into the Documents folder. When you open Terminal/Command you will likely be in the home (or 'C://' drive), but you can change to Documents with ``cd Documents`` 
+		
+		#. 	Clone the repository using ``git clone https://github.com/cugriffinlab/your-username-gnomes.git``
+		#.	Change to the current working directory using ``cd your-username-gnomes``
+		#.	Build the simulation using ``docker-compose -f ./sandbox/docker-compose.yml build``
+		#.	Run the simulation using ``docker-compose -f ./sandbox/docker-compose.yml up --abort-on-container-exit``
 
 Submitting and receiving official feedback
 -----------------------------------------------------------
