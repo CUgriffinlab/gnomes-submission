@@ -21,7 +21,7 @@ OBSERVATIONS = {
 	"my_demand": 		True
 }
 
-def rl_reward(home):
+def reward(home):
     """
     Reward function
     """
