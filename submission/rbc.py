@@ -1,5 +1,7 @@
 """Player submission script"""
 
+USING_RBC = True
+
 def reward(home):
     """
     Reward function

@@ -1,5 +1,6 @@
 from stable_baselines3 import SAC
 
+USING_RL = True
 RL_NAME = "my_agent"
 NUM_TIMESTEPS = 25
 OBSERVATIONS = {
