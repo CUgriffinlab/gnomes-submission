@@ -9,7 +9,8 @@ import numpy as np
 class MockPlayerHome:
     def __init__(self):
         self.action_space = gym.spaces.Box(-1 * np.ones(3), np.ones(3))
-        self.obs_dict = {"t_in_current":True,
+        self.obs_dict = {
+            "t_in_current":True,
             "t_out_current":True,
             "t_out_6hr":True,
             "t_out_12hr":True,
@@ -20,7 +21,8 @@ class MockPlayerHome:
             "day_of_week":True,
             "is_holiday":True,
             "occupancy_status":True, 
-            "my_demand":True}
+            "my_demand":True
+        }
 
 class SubmissionLib(unittest.TestCase):
     def test_reward(self):

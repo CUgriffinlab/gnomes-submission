@@ -8,14 +8,12 @@ import argparse
 
 from dragg_comp.player import PlayerHome
 from submission.submission import *
-# from stable_baselines3 import SAC
 
 REDIS_URL = "redis://localhost"
 
 class PlayerSubmission(PlayerHome):
-	def __init__(self, redis_url=REDIS_URL, rl_name="my_agent"):
+	def __init__(self, redis_url=REDIS_URL):
 		super().__init__(redis_url=redis_url)
-		
 		self.rl_name = rl_name
 		if self.rl_name:
 			self.update_states(OBSERVATIONS)
@@ -35,6 +33,7 @@ if __name__=="__main__":
 
 	#-db DATABSE -u USERNAME -p PASSWORD -size 20
 	parser.add_argument("-r", "--redis", help="Redis host URL", default=REDIS_URL)
+
 	args = parser.parse_args()
 
 	env = PlayerSubmission(redis_url=args.redis, rl_name=RL_NAME)
@@ -56,4 +55,3 @@ if __name__=="__main__":
 	print(env.score())
 	toc = datetime.now()
 	print(toc-tic)
-
