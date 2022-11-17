@@ -2,7 +2,7 @@
 FROM python:3.9
 
 # Install dragg
-RUN pip install dragg
+RUN pip install dragg==2.0.6
 
 # Install dragg-comp
 RUN pip install dragg-comp

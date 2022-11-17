@@ -1,11 +1,14 @@
+RL_TRAINING = False
+RL_NAME = None
+
+
 from datetime import datetime
 import asyncio
 import argparse
 
 from dragg_comp.player import PlayerHome
-# import submission.rbc as submission
-import submission.rl as submission
-from stable_baselines3 import SAC
+from submission.submission import *
+# from stable_baselines3 import SAC
 
 REDIS_URL = "redis://localhost"
 
@@ -15,21 +18,16 @@ class PlayerSubmission(PlayerHome):
 		
 		self.rl_name = rl_name
 		if self.rl_name:
-			self.update_states(submission.OBSERVATIONS)
+			self.update_states(OBSERVATIONS)
 		self.agent = None
 
 	def get_reward(self):
 		# redefines get_reward with the player's implementation
-		my_reward = submission.reward(self)
+		my_reward = reward(self)
 		return my_reward
 
 	def get_prediction(self):
-		if self.rl_name:
-			if not self.agent:
-				self.agent = SAC.load(f"../../submission/{self.rl_name}")
-			return self.agent.predict(self.get_obs())[0]
-		else:
-			return submission.predict(self)
+		return predict(self)
 
 if __name__=="__main__":
 
@@ -39,23 +37,19 @@ if __name__=="__main__":
 	parser.add_argument("-r", "--redis", help="Redis host URL", default=REDIS_URL)
 	args = parser.parse_args()
 
-	env = PlayerSubmission(redis_url=args.redis, rl_name=submission.RL_NAME)
+	env = PlayerSubmission(redis_url=args.redis, rl_name=RL_NAME)
 	
-	rl = True
-	if rl:
+	if RL_TRAINING:
 		print("Training your RL agent...")
-		model = submission.create_model(env)
-		model.learn(submission.NUM_TIMESTEPS)
+		model = create_model(env)
+		model.learn(NUM_TIMESTEPS)
 		model.save(f"../../submission/{env.rl_name}")
 
 	obs = env.reset()
 	tic = datetime.now()
 	print("Testing your agent...")
 	for _ in range(env.num_timesteps):
-		if rl:
-			action = env.get_prediction()
-		else:
-			action = predict(env)
+		action = env.get_prediction()
 		env.step(action)
 
 	asyncio.run(env.post_status("done"))
