@@ -1,12 +1,20 @@
 # Install python
 FROM python:3.9
 
+ADD . /dragg-comp
+ADD . /dragg
+
+RUN pip install /dragg/.
+RUN pip install /dragg-comp/.
+
+
 # Install dragg
-RUN pip install dragg==1.2.3rc0 #--pre
+# RUN pip install dragg
 
 # Install dragg-comp
-RUN pip install dragg-comp==0.2.2rc0 #--pre
+# RUN pip install dragg-comp
 RUN pip install cvxopt
+RUN pip install stable-baselines3
 
 # Copy parent directory
 ADD . /dragg-comp-submission
@@ -16,4 +24,4 @@ RUN pip install /dragg-comp-submission/.
 
 # Run simulation
 WORKDIR  /dragg-comp-submission/sandbox/simulation
-CMD python run_player.py -r "redis://redis" & python run_aggregator.py -r "redis://redis"
+CMD python run_aggregator.py -r "redis://redis" & python run_player.py -r "redis://redis" 
