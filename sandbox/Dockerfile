@@ -1,20 +1,13 @@
 # Install python
 FROM python:3.9
 
-ADD . /dragg-comp
-ADD . /dragg
-
-RUN pip install /dragg/.
-RUN pip install /dragg-comp/.
-
-
 # Install dragg
-# RUN pip install dragg
+RUN pip install dragg
 
 # Install dragg-comp
-# RUN pip install dragg-comp
+RUN pip install dragg-comp
 RUN pip install cvxopt
-RUN pip install stable-baselines3
+# RUN pip install stable-baselines3
 
 # Copy parent directory
 ADD . /dragg-comp-submission
