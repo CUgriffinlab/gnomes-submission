@@ -6,7 +6,7 @@ import asyncio
 import argparse
 
 from dragg_comp.player import PlayerHome
-from submission import *
+from submission.submission import *
 
 REDIS_URL = "redis://localhost"
 
@@ -19,13 +19,13 @@ if __name__=="__main__":
 
 	args = parser.parse_args()
 
-	env = TestingEnv(redis_url=args.redis)
+	env = PlayerHome(redis_url=args.redis)
 
 	obs = env.reset()
 	tic = datetime.now()
 	print("Testing your agent...")
 	for _ in range(env.num_timesteps):
-		action = submission.predict(env)
+		action = predict(env)
 		env.step(action)
 
 	asyncio.run(env.post_status("done"))
