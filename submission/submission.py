@@ -1,35 +1,4 @@
-"""Player submission script"""
-
-# RL_TRAINING = True
-# RL_NAME = "test"
-# N_TRAINING_TIMESTEPS = 500
-# OBSERVATIONS = {
-#         "leaving_horizon":  True,
-#         "returning_horizon":True,
-#         "occupancy_status": True,
-#         "future_waterdraws":True,
-#         "t_out":            True,
-#         "t_out_6hr":        True,
-#         "t_out_12hr":       True,
-#         "ghi":              True,
-#         "ghi_6hr":          True,
-#         "ghi_12hr":         True,
-#         "t_in":             True,
-#         "t_wh":             True,
-#         "e_ev":             True,
-#         "time_of_day":      True,
-#         "community_demand": True,
-#         "my_demand":        True
-#     }
-
-def reward(home):
-    """
-    Reward function
-    :input:
-    """
-    # print(home.obs_dict)
-    reward = home.obs_dict['my_demand'] / 3.5
-    return reward
+# for an RBC agent
 
 def predict(home):
     """
@@ -50,4 +19,11 @@ def predict(home):
 
     return action
 
+# for an RL agent
+from submission.rl_training import *
 
+def predict(home):
+    agent = SAC.load("../../submission/my_test")
+    norm_obs = normalization(home)
+    action = agent.predict(norm_obs)[0]
+    return action
