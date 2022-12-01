@@ -17,8 +17,8 @@
 	"my_demand": 		true
 	},
 "actions":{
-	"hvac_setpoint":false,
-	"wh_setpoint":false,
+	"hvac_setpoint":true,
+	"wh_setpoint":true,
 	"ev_charge":true
 	}
 }
