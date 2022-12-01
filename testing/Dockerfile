@@ -2,11 +2,12 @@
 FROM python:3.9
 
 # Install dragg
-RUN pip install dragg==1.2.3rc0 #--pre
+RUN pip install dragg==2.0.6
 
 # Install dragg-comp
-RUN pip install dragg-comp==0.2.2rc0 #--pre
+RUN pip install dragg-comp
 RUN pip install cvxopt
+# RUN pip install stable-baselines3
 
 # Copy parent directory
 ADD . /dragg-comp-submission
