@@ -1,29 +1,31 @@
-# for an RBC agent
+"""Template for submission"""
+
 
 def predict(home):
     """
-    Predict function
-    :input: the current state of the environment as a list
-    :output:
-    """
-    threshold = 2 # kW
+    Simple rule-based prediction function as a template
 
-    if home.obs_dict['occupancy_status'] == 0:
-        hvac_action = 0 # neutral, leave the hvac alone
-        wh_action = -1 # turn off the water heater
-        ev_action = 1 # charge the car
+    Parameters
+    ----------
+    home : dragg_comp.player.PlayerHome
+        Your home
+
+    Returns
+    -------
+    list
+        List of actions corresponding to hvac, wh, and electric vehicle
+    """
+    # Rule-based control
+    if home.obs_dict['occupancy_status'] == 0:  # no one home
+        hvac_action = 0  # neutral, leave the hvac alone
+        wh_action = -1  # turn off the water heater
+        ev_action = 1  # charge the car
         action = [hvac_action, wh_action, ev_action]
 
-    else: 
-        action = home.action_space.sample() # choose a random action
+    else:  # Someone is home
+        action = home.action_space.sample()  # choose a random action
 
-    return action
+    # Ensure all actions are positive
+    action = [0 if i < 0 else i for i in action]
 
-# for an RL agent
-from submission.rl_training import *
-
-def predict(home):
-    agent = SAC.load("../../submission/my_test")
-    norm_obs = normalization(home)
-    action = agent.predict(norm_obs)[0]
     return action
