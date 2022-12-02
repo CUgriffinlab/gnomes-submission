@@ -25,7 +25,4 @@ def predict(home):
     else:  # Someone is home
         action = home.action_space.sample()  # choose a random action
 
-    # Ensure all actions are positive
-    action = [0 if i < 0 else i for i in action]
-
     return action
