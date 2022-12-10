@@ -22,7 +22,7 @@ Criteria:
 - Most improved : $1000
 - Golden Gnome Award (competition administrators choice award based on a vote. Criteria may include most innovative, highest risk/reward strategy, etc.) : $1000
 
-Note that a team may only win in one of the above categories.
+Note that a team may only win in one of the above categories. Thus, five teams will receive prizes.
 
 -----------------------------------
 Prizes
