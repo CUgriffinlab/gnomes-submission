@@ -1,7 +1,8 @@
 ========================================
 Competition Rules and Regulations
 ========================================
-
+.. image:: gnomelogo.png
+  :width: 200 
 This competition is limited to currently enrolled undergraduate students at The University of Colorado Boulder (CU Boulder) under good academic standing. Teams can be comprised of 1 or 2 students, from any college or department at CU Boulder. 
 
 The competition is scheduled to launch in the second week of the Spring 2023 semseter (January 23) although teams may use the Sandbox and familiarize themselves with the system ahead of time. 
@@ -23,6 +24,9 @@ Criteria:
 - Golden Gnome Award (competition administrators choice award based on a vote. Criteria may include most innovative, highest risk/reward strategy, etc.) : $1000
 
 Note that a team may only win in one of the above categories. Thus, five teams will receive prizes.
+
+.. image:: goldengnome.png
+  :width: 200
 
 -----------------------------------
 Prizes
