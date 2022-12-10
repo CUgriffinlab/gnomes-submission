@@ -20,7 +20,7 @@ Criteria:
 - Lowest cost : $2000
 - Lowest comfort violations : $2000
 - Most improved : $1000
-- Golden Gnome Award (competition administrators award based on a vote. Criteria may include most innovative, highest risk/reward, etc) : $1000
+- Golden Gnome Award (competition administrators choice award based on a vote. Criteria may include most innovative, highest risk/reward strategy, etc.) : $1000
 
 Note that a team may only win in one of the above categories.
 
