@@ -40,7 +40,6 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial of Submission</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#creating-your-submission">Creating your submission</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#the-reward-function">The reward function</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#the-predict-function">The predict function</a></li>
 </ul>
 </li>
@@ -119,7 +118,7 @@
 </div>
 <div class="section" id="creating-your-submission">
 <h2>Creating your submission<a class="headerlink" href="#creating-your-submission" title="Permalink to this headline">¶</a></h2>
-<p>For a complete submission you should customize the <cite>reward()</cite> function to evaluate performance and the <cite>predict()</cite> function to determine the action to take. In both of these functions you may use any of the available observations about your home. Here is a list of the valid keys to <cite>home.obs_dict</cite>.</p>
+<p>For a complete submission you should customize the <cite>predict()</cite> function to determine an action for your gnome home to take. In both of these functions you may use any of the available observations about your home. Here is a list of the valid keys to <cite>home.obs_dict</cite>:</p>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p>“t_in_current”, current indoor temperature (deg C)</p></li>
@@ -135,16 +134,9 @@
 <li><p>“my_demand”, current net electric consumption (kW)</p></li>
 </ol>
 </div></blockquote>
-<div class="section" id="the-reward-function">
-<h3>The reward function<a class="headerlink" href="#the-reward-function" title="Permalink to this headline">¶</a></h3>
-<p>While the GNOMES competition will provide holistic feedback on your performance, the <cite>reward(home)</cite> function can be useful to provide step-by-step feedback on performance. This is similar to how the machine learning algorithm “Reinforcement Learning” works: certain observations and actions can be categorized as “good” or “bad” (or anywhere in between) via the reward observed and you can build intuition without exact knowledge.</p>
-<p>For example, let’s say the competition reward algorithm was very complicated and nearly impossible to model but you notice it is strongly correlated with a low amount of energy consumed at any given timestep. You can “grade” your agent based off a very simple reward function such as:</p>
-<p><code class="docutils literal notranslate"><span class="pre">reward</span> <span class="pre">=</span> <span class="pre">-1</span> <span class="pre">*</span> <span class="pre">home.obs_dict[&quot;my_demand&quot;]</span></code></p>
-<p>We encourage you to try other transformations to get your home working well. You might look into different optimization objectives that you think could work to approximate the goals of the competition.</p>
-</div>
 <div class="section" id="the-predict-function">
 <h3>The predict function<a class="headerlink" href="#the-predict-function" title="Permalink to this headline">¶</a></h3>
-<p>The <cite>predict(home)</cite> function is more directly related to the performance of the agent and provides the action to be performed at the next timestep. You are predicting the best action(s) to take. The output in three parts describes the action for:</p>
+<p>The <cite>predict(home)</cite> function is directly related to the performance of the agent and provides the action to be performed at the next timestep. You are predicting the best action(s) to take. The output in three parts describes the action for:</p>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p>The HVAC setpoint</p></li>
@@ -152,8 +144,8 @@
 <li><p>The electric vehicle charge command</p></li>
 </ol>
 </div></blockquote>
-<p>The resulting action should be a list (or array) that is 3 entries long, and each entry should be a number between [-1,1]. For the HVAC this will change the setpoint between the lowest possible value and the highest possible value. For the water heater a low value (-1) will turn the water heater off, and a high value will turn the water heater on whenever possible, intermediate values will correspond to being on part of the time interval (e.g. 0 corresponds to a 50% duty cycle over the 15 minute interval). For the electric vehicle the charge is interpolated between the maximum possible charge (+5kW) and the maximum possible discharge (-5kW).</p>
-<p>Once you change the submission/submission.py file no further changes need to be made. To be clear: you should only change the contents of submission.py; submission.py is the only file you are allowed to change and it is the only change that will be applicable to the competition performance.</p>
+<p>The resulting action should be a list (or array) that is 3 entries long, and each entry should be a number between [-1,1]. For the HVAC this will change the setpoint between the lowest possible value and the highest possible value. For the water heater a low value (-1) will turn the water heater off, and a high value will turn the water heater on whenever possible, intermediate values will correspond to being on part of the time interval (e.g. 0 corresponds to an average power consumption of 50% over the 15 minute interval). For the electric vehicle the charge is interpolated between the maximum possible charge (+5kW) and the maximum possible discharge to the grid (-5kW).</p>
+<p>Once you change the submission/submission.py file no further changes need to be made to make a valid submission.</p>
 </div>
 </div>
 <div class="section" id="testing-your-submission-locally">

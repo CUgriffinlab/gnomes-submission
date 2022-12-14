@@ -28,7 +28,7 @@ Getting Started
 
 Creating your submission
 -----------------------------------------------
-For a complete submission you should customize the `reward()` function to evaluate performance and the `predict()` function to determine the action to take. In both of these functions you may use any of the available observations about your home. Here is a list of the valid keys to `home.obs_dict`.
+For a complete submission you should customize the `predict()` function to determine an action for your gnome home to take. In both of these functions you may use any of the available observations about your home. Here is a list of the valid keys to `home.obs_dict`:
 
 	#. "t_in_current", current indoor temperature (deg C)
 	#. "t_out_current", current indoor temperature (deg C)
@@ -42,28 +42,17 @@ For a complete submission you should customize the `reward()` function to evalua
 	#. "occupancy", true/false value for occupancy status
 	#. "my_demand", current net electric consumption (kW)
 	
-
-The reward function
-^^^^^^^^^^^^^^^^^^^^^^^^^
-While the GNOMES competition will provide holistic feedback on your performance, the `reward(home)` function can be useful to provide step-by-step feedback on performance. This is similar to how the machine learning algorithm “Reinforcement Learning” works: certain observations and actions can be categorized as “good” or “bad” (or anywhere in between) via the reward observed and you can build intuition without exact knowledge.
-
-For example, let's say the competition reward algorithm was very complicated and nearly impossible to model but you notice it is strongly correlated with a low amount of energy consumed at any given timestep. You can "grade" your agent based off a very simple reward function such as:
-
-``reward = -1 * home.obs_dict["my_demand"]``
-
-We encourage you to try other transformations to get your home working well. You might look into different optimization objectives that you think could work to approximate the goals of the competition.
-
 The predict function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The `predict(home)` function is more directly related to the performance of the agent and provides the action to be performed at the next timestep. You are predicting the best action(s) to take. The output in three parts describes the action for:
+The `predict(home)` function is directly related to the performance of the agent and provides the action to be performed at the next timestep. You are predicting the best action(s) to take. The output in three parts describes the action for:
 
 	#.	The HVAC setpoint
 	#.	The water heater on/off status
 	#.	The electric vehicle charge command
 	
-The resulting action should be a list (or array) that is 3 entries long, and each entry should be a number between [-1,1]. For the HVAC this will change the setpoint between the lowest possible value and the highest possible value. For the water heater a low value (-1) will turn the water heater off, and a high value will turn the water heater on whenever possible, intermediate values will correspond to being on part of the time interval (e.g. 0 corresponds to a 50% duty cycle over the 15 minute interval). For the electric vehicle the charge is interpolated between the maximum possible charge (+5kW) and the maximum possible discharge (-5kW). 
+The resulting action should be a list (or array) that is 3 entries long, and each entry should be a number between [-1,1]. For the HVAC this will change the setpoint between the lowest possible value and the highest possible value. For the water heater a low value (-1) will turn the water heater off, and a high value will turn the water heater on whenever possible, intermediate values will correspond to being on part of the time interval (e.g. 0 corresponds to an average power consumption of 50% over the 15 minute interval). For the electric vehicle the charge is interpolated between the maximum possible charge (+5kW) and the maximum possible discharge to the grid (-5kW). 
 
-Once you change the submission/submission.py file no further changes need to be made. To be clear: you should only change the contents of submission.py; submission.py is the only file you are allowed to change and it is the only change that will be applicable to the competition performance.
+Once you change the submission/submission.py file no further changes need to be made to make a valid submission.
 
 Testing your submission (locally)
 -------------------------------------------
