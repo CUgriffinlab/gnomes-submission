@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tutorial of Creating an RL Agent &mdash; Competition beta documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Competition Rules and Regulations" href="rules.html" />
+    <link rel="prev" title="Tutorial of Submission" href="tutorial.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Competition
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Conceptual Overview of DRAGG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial of Submission</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial of Creating an RL Agent</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-reward-function">The reward function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-normalization-function">The normalization function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-train-function">The train function</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rules.html">Competition Rules and Regulations</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Competition</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Tutorial of Creating an RL Agent</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/rl_tutorial.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="tutorial-of-creating-an-rl-agent">
+<h1>Tutorial of Creating an RL Agent<a class="headerlink" href="#tutorial-of-creating-an-rl-agent" title="Permalink to this headline">¶</a></h1>
+<p>Reinforcement learning (RL) is a method of black-box machine learning, meaning that the RL agent can produce actions that optimize performance without knowing the mechanics of the environment. Like a child learning new things, RL agents can try an action, observe the outcome, and extrapolate about which actions are good and bad and when without ever knowing the exact physics behind transitions from one state to the next. As the human behind the RL agent you will have to give the RL agent clues to sort the outcomes into “good” and “bad”. You will also be able to define other parameters of the RL agent such as which algorithms it uses, the amount of time you allow it to train, and which observations the RL should consider. We have provided a framework for you in the <cite>rl_training.py</cite> file and a description of how to implement it to create a custom agent below:</p>
+<div class="section" id="the-reward-function">
+<h2>The reward function<a class="headerlink" href="#the-reward-function" title="Permalink to this headline">¶</a></h2>
+<p>While the GNOMES competition will provide holistic feedback on your performance, the <cite>reward(home)</cite> function can be useful to provide step-by-step feedback on performance.</p>
+<p>For example, let’s say the competition reward algorithm was very complicated and nearly impossible to model but you notice it is strongly correlated with a low amount of energy consumed at any given timestep. You can “grade” your agent based off a very simple reward function such as:</p>
+<p><code class="docutils literal notranslate"><span class="pre">reward</span> <span class="pre">=</span> <span class="pre">-1</span> <span class="pre">*</span> <span class="pre">home.obs_dict[&quot;my_demand&quot;]</span></code></p>
+<p>but there is no techincal limit to how complicated your function can be (we don’t necessarily recommend this reward signal either, but you get the idea):</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>reward = -1 * home.obs_dict[“my_demand”] ** (home.obs_dict[“occupancy”]) * np.sin(home.obs_dict[“h_out_6hr”]) ``</p>
+<p>We encourage you to try other transformations to get your home working well. You might look into different optimization objectives that you think could work to approximate the goals of the competition.</p>
+<p>Reward should take the input argument <cite>home</cite>, and output the reward as a single floating point value.</p>
+</div>
+<div class="section" id="the-normalization-function">
+<h2>The normalization function<a class="headerlink" href="#the-normalization-function" title="Permalink to this headline">¶</a></h2>
+<p>This function is intended to (1) filter the values that the reinforcement learning agent can consider and (2) normalize them to stabilize learning.</p>
+<p>Since RL agents built on the OpenAI gym platform expect the observation values as a list of numbers (e.g. floats) you will need to parse the observation dictionary (home.obs_dict) to a list. You can build this list in any way you like, but consider that the list should pass the values in the same order every time (e.g. if you pass the values as [temperature, occupancy] you should continue to use that order; passing them as [occupancy, temperature] might confuse the agent).</p>
+<p>Deep reinforcement learning is based on a series of neural networks that describe the relationships of inputs (actions and states) and outputs (rewards). Neural networks are “trained” to classify this relationship through gradient descent which depends on the error between the observed and predicted output. If the model uses multiple inputs (say temperature and occupancy status) the scale of the temperature value (e.g. 20 deg C) compared to the occupancy status (e.g. 0 or 1) can cause issues in updating weights of the network. Therefore it is recommended to normalize your values to be approximately have a mean of 0 and standard deviation of 1.</p>
+<p>Normalization should take the input argument <cite>home</cite>, and output the observation as a list (any length) of floating point values.</p>
+</div>
+<div class="section" id="the-train-function">
+<h2>The train function<a class="headerlink" href="#the-train-function" title="Permalink to this headline">¶</a></h2>
+<p>The train function is what you will run locally to create an agent. The agent can be saved and evaluated later on by the official scoring mechanism of GNOMES.</p>
+<p>It will be your responsibility to train your agent, save it, and provide a <cite>predict()</cite> method in <cite>submission.py</cite> that calls the agent from whatever method you used to store it. We have provided a framework using the popular library Stable-Baselines3 for you to get started.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tutorial.html" class="btn btn-neutral float-left" title="Tutorial of Submission" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="rules.html" class="btn btn-neutral float-right" title="Competition Rules and Regulations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Jacob Kravits.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
