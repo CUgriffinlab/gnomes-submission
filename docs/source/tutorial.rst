@@ -19,12 +19,12 @@ Getting Started
 
 #. Copy the repository from GitHub to your computer using git clone:
 
-	* ``$ git clone https://github.com/cugriffinlab/YOUR-USERNAME-gnomes``. This will create a folder called your-username-gnomes with all the files in the your-username-gnomes repository
+	* ``git clone https://github.com/cugriffinlab/YOUR-USERNAME-gnomes``. This will create a folder called your-username-gnomes with all the files in the your-username-gnomes repository
 
 #. Edit the submission file as described below and then commit/push them to your GitHub repository:
 
-	* ``$ git commit submission/submission.py -m “Custom message about improvement”``
-	* ``$ git push``
+	* ``git commit submission/submission.py -m “Custom message about improvement”``
+	* ``git push``
 
 Creating your submission
 -----------------------------------------------
@@ -66,7 +66,7 @@ To test your agent you can run the same simulation setup as the official competi
 		
 		#. 	Clone the repository using ``git clone https://github.com/cugriffinlab/your-username-gnomes.git``
 		#.	Change to the current working directory using ``cd your-username-gnomes``
-		#.	Build the tests using ``docker-compose -f ./testing/docker-compose.yml build``
+		#.	Build the tests using ``docker-compose -f ./testing/docker-compose.yml build`` (make sure Docker is open on your computer).
 		#.	Run the tests using ``docker-compose -f ./testing/docker-compose.yml up --abort-on-container-exit``. Submissions must pass all tests!
 
 	* The steps for self-evaluation are as follows:
@@ -77,7 +77,7 @@ To test your agent you can run the same simulation setup as the official competi
 		
 		#. 	Clone the repository using ``git clone https://github.com/cugriffinlab/your-username-gnomes.git``
 		#.	Change to the current working directory using ``cd your-username-gnomes``
-		#.	Build the simulation using ``docker-compose -f ./sandbox/docker-compose.yml build``
+		#.	Build the simulation using ``docker-compose -f ./sandbox/docker-compose.yml build`` (make sure Docker is open on your computer).
 		#.	Run the simulation using ``docker-compose -f ./sandbox/docker-compose.yml up --abort-on-container-exit``
 		#.  The results of the simulation are in the folder ``sandbox/outputs``. 
 		
