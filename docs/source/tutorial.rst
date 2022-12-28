@@ -25,6 +25,13 @@ Getting Started
 
 	* ``git commit submission/submission.py -m “Custom message about improvement”``
 	* ``git push``
+	
+If this is your first time using git, you may also have to set up your username and password with the following commands:
+
+	* ``git config --global user.name "FIRSTNAME LASTNAME"``
+	* ``git config --global user.email "YOURNAME@colorado.edu"``
+	
+Where you replace "FIRSTNAME LASTNAME" "YOURNAME" with your desired name/email.
 
 Creating your submission
 -----------------------------------------------
