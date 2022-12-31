@@ -13,25 +13,40 @@ Getting Started
 	* Download and configure git following `these instructions <https://docs.github.com/en/get-started/quickstart/set-up-git>`_.
 	* Test your configuration by opening the Terminal (Mac) or PowerShell (Windows) application and copy and paste ``git --version`` into the window. After pressing <Enter>, the current version of git should be printed. If not, email cugriffinlab@gmail.com for help.
 	* Download and configure docker desktop by following `these instructions for mac <https://docs.docker.com/desktop/install/mac-install/>`_ or `these instructions for windows <https://docs.docker.com/desktop/install/windows-install/>`_.
-	* Test your configuration by opening the Terminal (Mac) or PowerShell (Windows) application and copy and paste ``docker --version`` into the window. After pressing <Enter>, the current version of docker should be printed. If not, email cugriffinlab@gmail.com for help.
+	* Test your configuration by opening the Terminal (Mac) or PowerShell (Windows) application and enter the command ``$ docker --version`` into the window. Throughout this tutorial (and many help guides) we will use ``$`` to indicate system commands in Terminal/PowerShell. Do not include the ``$`` in the command. After pressing <Enter>, the current version of docker should be printed. If not, email cugriffinlab@gmail.com for help.
 
 #. Wait for us to make you a shiny new submission repository! For security purposes, it is important that we maintain ownership of the repository, so we will let you know when one is created for you (we will aim to do so within 1 day of your request to join).
 
+Using GitHub
+-----------------------------------------------
+
 #. Copy the repository from GitHub to your computer using git clone:
 
-	* ``git clone https://github.com/cugriffinlab/YOUR-USERNAME-gnomes``. This will create a folder called your-username-gnomes with all the files in the your-username-gnomes repository
-
-#. Edit the submission file as described below and then commit/push them to your GitHub repository:
-
-	* ``git commit submission/submission.py -m “Custom message about improvement”``
-	* ``git push``
+	* ``$ git clone https://github.com/cugriffinlab/YOUR-USERNAME-gnomes``. This will create a folder called your-username-gnomes with all the files in the your-username-gnomes repository
 	
 If this is your first time using git, you may also have to set up your username and password with the following commands:
 
-	* ``git config --global user.name "FIRSTNAME LASTNAME"``
-	* ``git config --global user.email "YOURNAME@colorado.edu"``
+	* ``$ git config --global user.name "FIRSTNAME LASTNAME"``
+	* ``$ git config --global user.email "YOURNAME@colorado.edu"``
 	
 Where you replace "FIRSTNAME LASTNAME" "YOURNAME" with your desired name/email.
+	
+#. Create a GitHub security token following the steps below. GitHub uses Personal Access Tokens as a method of two-factor authentication which is much more secure than simply using a password. The Personal Access Token will be a long string of randomly generated letters and numbers to enhance security and ensure it is hard to guess.
+	* Create a personal access token
+	* On git go to your username > settings.
+	* Settings > Developer settings
+	* Developer settings > Personal Access Tokens
+	* Generate a new access token, select the button next to Repositories to give this access token permission to read/write to repositories associated with your account. The point of this access token is to access your git account from the command line, so that can be the “message”. The message isn’t important though (just a reminder for later).
+	* Copy this token! If you forget it you might need to redo the following steps.
+	* Set the remote to be a new URL that has read/write permissions to your Github account.
+	* In your terminal, from the directory named YOUR-USERNAME-gnomes, use the following command, replacing the YOUR-USERNAME and PERSONAL-ACCESS-TOKEN fields:
+`` $ git remote set-url origin https://YOUR-USERNAME:PERSONAL-ACCESS-TOKEN@github.com/cugriffinlab/YOUR-USERNAME-gnomes.git``
+
+
+#. Edit the submission file as described below and then commit/push them to your GitHub repository:
+
+	* ``$ git commit submission/submission.py -m “Custom message about improvement”``
+	* ``$ git push``
 
 Creating your submission
 -----------------------------------------------
@@ -48,6 +63,8 @@ For a complete submission you should customize the `predict()` function to deter
 	#. "day_of_week", day of week (0-6)
 	#. "occupancy", true/false value for occupancy status
 	#. "my_demand", current net electric consumption (kW)
+	
+If you're a beginner Python user, you might find `this basic tutorial <https://docs.google.com/document/d/1uhLihn5cZ-GQbUI86SKiO8q5rFj1STvrtLansYbwZ30/edit?usp=sharing>`_ useful.
 	
 The predict function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -69,23 +86,23 @@ To test your agent you can run the same simulation setup as the official competi
 
 		#.	Open the Terminal (Mac) or Command Prompt (Windows) application and copy and paste the following commands into the window. Each time press <Enter> to run the command.
 		
-			* Optional: Change into the Documents folder. When you open Terminal/Command you will likely be in the home (or 'C://' drive), but you can change to Documents with ``cd Documents`` 
+			* Optional: Change into the Documents folder. When you open Terminal/Command you will likely be in the home (or 'C://' drive), but you can change to Documents with ``$ cd Documents`` 
 		
-		#. 	Clone the repository using ``git clone https://github.com/cugriffinlab/your-username-gnomes.git``
-		#.	Change to the current working directory using ``cd your-username-gnomes``
-		#.	Build the tests using ``docker-compose -f ./testing/docker-compose.yml build`` (make sure Docker is open on your computer).
-		#.	Run the tests using ``docker-compose -f ./testing/docker-compose.yml up --abort-on-container-exit``. Submissions must pass all tests!
+		#. 	Clone the repository using ``$ git clone https://github.com/cugriffinlab/your-username-gnomes.git``
+		#.	Change to the current working directory using ``$ cd your-username-gnomes``
+		#.	Build the tests using ``$ docker-compose -f ./testing/docker-compose.yml build`` (make sure Docker is open on your computer).
+		#.	Run the tests using ``$ docker-compose -f ./testing/docker-compose.yml up --abort-on-container-exit``. Submissions must pass all tests!
 
 	* The steps for self-evaluation are as follows:
 
 		#.	Open the Terminal (Mac) or Command Prompt (Windows) application and copy and paste the following commands into the window. Each time press <Enter> to run the command.
 		
-			* Optional: Change into the Documents folder. When you open Terminal/Command you will likely be in the home (or 'C://' drive), but you can change to Documents with ``cd Documents`` 
+			* Optional: Change into the Documents folder. When you open Terminal/Command you will likely be in the home (or 'C://' drive), but you can change to Documents with ``$ cd Documents`` 
 		
-		#. 	Clone the repository using ``git clone https://github.com/cugriffinlab/your-username-gnomes.git``
-		#.	Change to the current working directory using ``cd your-username-gnomes``
-		#.	Build the simulation using ``docker-compose -f ./sandbox/docker-compose.yml build`` (make sure Docker is open on your computer).
-		#.	Run the simulation using ``docker-compose -f ./sandbox/docker-compose.yml up --abort-on-container-exit``
+		#. 	Clone the repository using ``$ git clone https://github.com/cugriffinlab/your-username-gnomes.git``
+		#.	Change to the current working directory using ``$ cd your-username-gnomes``
+		#.	Build the simulation using ``$ docker-compose -f ./sandbox/docker-compose.yml build`` (make sure Docker is open on your computer).
+		#.	Run the simulation using ``$ docker-compose -f ./sandbox/docker-compose.yml up --abort-on-container-exit``
 		#.  The results of the simulation are in the folder ``sandbox/outputs``. 
 		
 ..
