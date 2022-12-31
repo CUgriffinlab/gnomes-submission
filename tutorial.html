@@ -39,6 +39,7 @@
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Conceptual Overview of DRAGG</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial of Submission</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-github">Using GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#creating-your-submission">Creating your submission</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#the-predict-function">The predict function</a></li>
 </ul>
@@ -95,23 +96,20 @@
 <li><p>Download and configure git following <a class="reference external" href="https://docs.github.com/en/get-started/quickstart/set-up-git">these instructions</a>.</p></li>
 <li><p>Test your configuration by opening the Terminal (Mac) or PowerShell (Windows) application and copy and paste <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code> into the window. After pressing &lt;Enter&gt;, the current version of git should be printed. If not, email <a class="reference external" href="mailto:cugriffinlab&#37;&#52;&#48;gmail&#46;com">cugriffinlab<span>&#64;</span>gmail<span>&#46;</span>com</a> for help.</p></li>
 <li><p>Download and configure docker desktop by following <a class="reference external" href="https://docs.docker.com/desktop/install/mac-install/">these instructions for mac</a> or <a class="reference external" href="https://docs.docker.com/desktop/install/windows-install/">these instructions for windows</a>.</p></li>
-<li><p>Test your configuration by opening the Terminal (Mac) or PowerShell (Windows) application and copy and paste <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">--version</span></code> into the window. After pressing &lt;Enter&gt;, the current version of docker should be printed. If not, email <a class="reference external" href="mailto:cugriffinlab&#37;&#52;&#48;gmail&#46;com">cugriffinlab<span>&#64;</span>gmail<span>&#46;</span>com</a> for help.</p></li>
+<li><p>Test your configuration by opening the Terminal (Mac) or PowerShell (Windows) application and enter the command <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">--version</span></code> into the window. Throughout this tutorial (and many help guides) we will use <code class="docutils literal notranslate"><span class="pre">$</span></code> to indicate system commands in Terminal/PowerShell. Do not include the <code class="docutils literal notranslate"><span class="pre">$</span></code> in the command. After pressing &lt;Enter&gt;, the current version of docker should be printed. If not, email <a class="reference external" href="mailto:cugriffinlab&#37;&#52;&#48;gmail&#46;com">cugriffinlab<span>&#64;</span>gmail<span>&#46;</span>com</a> for help.</p></li>
 </ul>
 </div></blockquote>
 </li>
 <li><p>Wait for us to make you a shiny new submission repository! For security purposes, it is important that we maintain ownership of the repository, so we will let you know when one is created for you (we will aim to do so within 1 day of your request to join).</p></li>
+</ol>
+</div>
+<div class="section" id="using-github">
+<h2>Using GitHub<a class="headerlink" href="#using-github" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
 <li><p>Copy the repository from GitHub to your computer using git clone:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/cugriffinlab/YOUR-USERNAME-gnomes</span></code>. This will create a folder called your-username-gnomes with all the files in the your-username-gnomes repository</p></li>
-</ul>
-</div></blockquote>
-</li>
-<li><p>Edit the submission file as described below and then commit/push them to your GitHub repository:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">submission/submission.py</span> <span class="pre">-m</span> <span class="pre">“Custom</span> <span class="pre">message</span> <span class="pre">about</span> <span class="pre">improvement”</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/cugriffinlab/YOUR-USERNAME-gnomes</span></code>. This will create a folder called your-username-gnomes with all the files in the your-username-gnomes repository</p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -119,11 +117,38 @@
 <p>If this is your first time using git, you may also have to set up your username and password with the following commands:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.name</span> <span class="pre">&quot;FIRSTNAME</span> <span class="pre">LASTNAME&quot;</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.email</span> <span class="pre">&quot;YOURNAME&#64;colorado.edu&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.name</span> <span class="pre">&quot;FIRSTNAME</span> <span class="pre">LASTNAME&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.email</span> <span class="pre">&quot;YOURNAME&#64;colorado.edu&quot;</span></code></p></li>
 </ul>
 </div></blockquote>
 <p>Where you replace “FIRSTNAME LASTNAME” “YOURNAME” with your desired name/email.</p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>Create a GitHub security token following the steps below. GitHub uses Personal Access Tokens as a method of two-factor authentication which is much more secure than simply using a password. The Personal Access Token will be a long string of randomly generated letters and numbers to enhance security and ensure it is hard to guess.</dt><dd><ul class="simple">
+<li><p>Create a personal access token</p></li>
+<li><p>On git go to your username &gt; settings.</p></li>
+<li><p>Settings &gt; Developer settings</p></li>
+<li><p>Developer settings &gt; Personal Access Tokens</p></li>
+<li><p>Generate a new access token, select the button next to Repositories to give this access token permission to read/write to repositories associated with your account. The point of this access token is to access your git account from the command line, so that can be the “message”. The message isn’t important though (just a reminder for later).</p></li>
+<li><p>Copy this token! If you forget it you might need to redo the following steps.</p></li>
+<li><p>Set the remote to be a new URL that has read/write permissions to your Github account.</p></li>
+<li><p>In your terminal, from the directory named YOUR-USERNAME-gnomes, use the following command, replacing the YOUR-USERNAME and PERSONAL-ACCESS-TOKEN fields:</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<p>`` $ git remote set-url origin <a class="reference external" href="https://YOUR-USERNAME:PERSONAL-ACCESS-TOKEN&#64;github.com/cugriffinlab/YOUR-USERNAME-gnomes">https://YOUR-USERNAME:PERSONAL-ACCESS-TOKEN&#64;github.com/cugriffinlab/YOUR-USERNAME-gnomes</a>.git``</p>
+<ol class="arabic">
+<li><p>Edit the submission file as described below and then commit/push them to your GitHub repository:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">submission/submission.py</span> <span class="pre">-m</span> <span class="pre">“Custom</span> <span class="pre">message</span> <span class="pre">about</span> <span class="pre">improvement”</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">push</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
 </div>
 <div class="section" id="creating-your-submission">
 <h2>Creating your submission<a class="headerlink" href="#creating-your-submission" title="Permalink to this headline">¶</a></h2>
@@ -143,6 +168,7 @@
 <li><p>“my_demand”, current net electric consumption (kW)</p></li>
 </ol>
 </div></blockquote>
+<p>If you’re a beginner Python user, you might find <a class="reference external" href="https://docs.google.com/document/d/1uhLihn5cZ-GQbUI86SKiO8q5rFj1STvrtLansYbwZ30/edit?usp=sharing">this basic tutorial</a> useful.</p>
 <div class="section" id="the-predict-function">
 <h3>The predict function<a class="headerlink" href="#the-predict-function" title="Permalink to this headline">¶</a></h3>
 <p>The <cite>predict(home)</cite> function is directly related to the performance of the agent and provides the action to be performed at the next timestep. You are predicting the best action(s) to take. The output in three parts describes the action for:</p>
@@ -167,13 +193,13 @@
 <div><ol class="arabic simple">
 <li><p>Open the Terminal (Mac) or Command Prompt (Windows) application and copy and paste the following commands into the window. Each time press &lt;Enter&gt; to run the command.</p>
 <ul class="simple">
-<li><p>Optional: Change into the Documents folder. When you open Terminal/Command you will likely be in the home (or ‘C://’ drive), but you can change to Documents with <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">Documents</span></code></p></li>
+<li><p>Optional: Change into the Documents folder. When you open Terminal/Command you will likely be in the home (or ‘C://’ drive), but you can change to Documents with <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cd</span> <span class="pre">Documents</span></code></p></li>
 </ul>
 </li>
-<li><p>Clone the repository using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/cugriffinlab/your-username-gnomes.git</span></code></p></li>
-<li><p>Change to the current working directory using <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">your-username-gnomes</span></code></p></li>
-<li><p>Build the tests using <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">./testing/docker-compose.yml</span> <span class="pre">build</span></code> (make sure Docker is open on your computer).</p></li>
-<li><p>Run the tests using <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">./testing/docker-compose.yml</span> <span class="pre">up</span> <span class="pre">--abort-on-container-exit</span></code>. Submissions must pass all tests!</p></li>
+<li><p>Clone the repository using <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/cugriffinlab/your-username-gnomes.git</span></code></p></li>
+<li><p>Change to the current working directory using <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cd</span> <span class="pre">your-username-gnomes</span></code></p></li>
+<li><p>Build the tests using <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">./testing/docker-compose.yml</span> <span class="pre">build</span></code> (make sure Docker is open on your computer).</p></li>
+<li><p>Run the tests using <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">./testing/docker-compose.yml</span> <span class="pre">up</span> <span class="pre">--abort-on-container-exit</span></code>. Submissions must pass all tests!</p></li>
 </ol>
 </div></blockquote>
 </li>
@@ -182,13 +208,13 @@
 <div><ol class="arabic simple">
 <li><p>Open the Terminal (Mac) or Command Prompt (Windows) application and copy and paste the following commands into the window. Each time press &lt;Enter&gt; to run the command.</p>
 <ul class="simple">
-<li><p>Optional: Change into the Documents folder. When you open Terminal/Command you will likely be in the home (or ‘C://’ drive), but you can change to Documents with <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">Documents</span></code></p></li>
+<li><p>Optional: Change into the Documents folder. When you open Terminal/Command you will likely be in the home (or ‘C://’ drive), but you can change to Documents with <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cd</span> <span class="pre">Documents</span></code></p></li>
 </ul>
 </li>
-<li><p>Clone the repository using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/cugriffinlab/your-username-gnomes.git</span></code></p></li>
-<li><p>Change to the current working directory using <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">your-username-gnomes</span></code></p></li>
-<li><p>Build the simulation using <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">./sandbox/docker-compose.yml</span> <span class="pre">build</span></code> (make sure Docker is open on your computer).</p></li>
-<li><p>Run the simulation using <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">./sandbox/docker-compose.yml</span> <span class="pre">up</span> <span class="pre">--abort-on-container-exit</span></code></p></li>
+<li><p>Clone the repository using <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/cugriffinlab/your-username-gnomes.git</span></code></p></li>
+<li><p>Change to the current working directory using <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cd</span> <span class="pre">your-username-gnomes</span></code></p></li>
+<li><p>Build the simulation using <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">./sandbox/docker-compose.yml</span> <span class="pre">build</span></code> (make sure Docker is open on your computer).</p></li>
+<li><p>Run the simulation using <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">./sandbox/docker-compose.yml</span> <span class="pre">up</span> <span class="pre">--abort-on-container-exit</span></code></p></li>
 <li><p>The results of the simulation are in the folder <code class="docutils literal notranslate"><span class="pre">sandbox/outputs</span></code>.</p></li>
 </ol>
 </div></blockquote>
