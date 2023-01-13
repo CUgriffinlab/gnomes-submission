@@ -16,7 +16,7 @@ Judging Criteria
 Criteria:
 
 - Best overall composite score : $4000
-- Best `L-2 Norm <https://mathworld.wolfram.com/L2-Norm.html>` of Demand : $2000
+- Best `L-2 Norm <https://mathworld.wolfram.com/L2-Norm.html>`_ of Demand : $2000
 - Lowest contribution to community peak : $2000
 - Golden Gnome Award (competition administrators choice award based on a vote. Criteria may include most innovative, highest risk/reward strategy, most improved, etc.) : $2000
 
