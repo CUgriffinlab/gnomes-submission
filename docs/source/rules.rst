@@ -5,25 +5,22 @@ Competition Rules and Regulations
   :width: 200 
 This competition is limited to currently enrolled undergraduate students at The University of Colorado Boulder (CU Boulder) under good academic standing. Teams can be comprised of 1 or 2 students, from any college or department at CU Boulder. 
 
-The competition is scheduled to launch in the second week of the Spring 2023 semseter (January 23) although teams may use the Sandbox and familiarize themselves with the system ahead of time. 
+The competition is scheduled to launch Feb 1 and run until May 1. Teams may use the Sandbox and familiarize themselves with the system ahead of time. 
 
 Each team's entry will be run daily at 5 AM (MST) to provide feedback. Entries will be officially scored weekly each Sunday and these results will be displayed on the public scoreboard. The final competition score will be a weighted average of past weekly scores (with more recent scores having significantly more weight).
 
 ----------------------------------
-Judging Criteria [Subject to Change]
+Judging Criteria
 ----------------------------------
-
-Will have mathematical formulation of reward functions/scoring here after team discussion.
 
 Criteria:
 
 - Best overall composite score : $4000
-- Lowest cost : $2000
-- Lowest comfort violations : $2000
-- Most improved : $1000
-- Golden Gnome Award (competition administrators choice award based on a vote. Criteria may include most innovative, highest risk/reward strategy, etc.) : $1000
+- Best `L-2 Norm <https://mathworld.wolfram.com/L2-Norm.html>` of Demand : $2000
+- Lowest contribution to community peak : $2000
+- Golden Gnome Award (competition administrators choice award based on a vote. Criteria may include most innovative, highest risk/reward strategy, most improved, etc.) : $2000
 
-Note that a team may only win in one of the above categories. Thus, five teams will receive prizes.
+Note that a team may only win in one of the above categories. Thus, four different teams will receive prizes.
 
 .. image:: goldengnome.png
   :width: 200
