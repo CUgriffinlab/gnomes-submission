@@ -25,13 +25,13 @@ Criteria:
 
 Note that a team may only win in one of the above categories. Thus, four different teams will receive prizes.
 
-.. image:: goldengnome.png
-  :width: 200
-
 -----------------------------------
 Prizes
 -----------------------------------
 Prizes will be awarded in the form of one-time stipends (checks or direct deposit) issued by the university at the end of the competition (in early May 2023) subject to any university restrictions. For teams of 2, prizes will be split evenly and individually awarded as such unless both team members inform the competition adminstrators ahead of time of a different desired distribution. The Griffin Lab and Gnomes4Homes team are not responsible for mediating disputes between team members regarding prize disbursement or distribution.
+
+.. image:: goldengnome.png
+  :width: 200
 
 ---------------------------------------------
 Other Terms and Conditions
