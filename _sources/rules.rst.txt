@@ -20,6 +20,9 @@ Criteria:
 - Lowest contribution to community peak : $2000
 - Golden Gnome Award (competition administrators choice award based on a vote. Criteria may include most innovative, highest risk/reward strategy, most improved, etc.) : $2000
 
+.. image:: score.png
+  :width: 600 
+
 Note that a team may only win in one of the above categories. Thus, four different teams will receive prizes.
 
 .. image:: goldengnome.png
