@@ -5,7 +5,7 @@ Getting Started
 #. You MUST register your team with the competition hosts. Please email cugriffinlab@gmail.com with:
 
 	* Your team name
-	* The names of all teammates
+	* The names of all teammates (limit 2 members per team)
 	* The GitHub usernames of all teammates. If you do not have a GitHub account, create one `here <https://github.com/join>`_.
 
 #. This competition will use `github <https://github.com/about>`_ to track submissions and `docker <https://docs.docker.com/get-started/overview/>`_ to ensure consistency/fairness of simulation enviornments accross participants. Do not worry if this is your first time hearing about either of these, we will be providing step-by-step instructions for their usage.
