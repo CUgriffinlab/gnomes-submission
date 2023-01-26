@@ -1,7 +1,8 @@
 Tutorial of Submission
-============================
+======================
+
 Getting Started
--------------------------------------------
+---------------
 #. You MUST register your team with the competition hosts. Please email cugriffinlab@gmail.com with:
 
 	* Your team name
@@ -18,7 +19,7 @@ Getting Started
 #. Wait for us to make you a shiny new submission repository! For security purposes, it is important that we maintain ownership of the repository, so we will let you know when one is created for you (we will aim to do so within 1 day of your request to join).
 
 Using GitHub
------------------------------------------------
+------------
 
 #. Copy the repository from GitHub to your computer using git clone:
 
@@ -49,7 +50,8 @@ Where you replace "FIRSTNAME LASTNAME" "YOURNAME" with your desired name/email.
 	* ``$ git push``
 
 Creating your submission
------------------------------------------------
+------------------------
+
 For a complete submission you should customize the `predict()` function to determine an action for your gnome home to take. In both of these functions you may use any of the available observations about your home. Here is a list of the valid keys to `home.obs_dict`:
 
 	#. "t_in_current", current indoor temperature (deg C)
@@ -67,7 +69,7 @@ For a complete submission you should customize the `predict()` function to deter
 If you're a beginner Python user, you might find `this basic tutorial <https://docs.google.com/document/d/1uhLihn5cZ-GQbUI86SKiO8q5rFj1STvrtLansYbwZ30/edit?usp=sharing>`_ useful.
 	
 The predict function
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 The `predict(home)` function is directly related to the performance of the agent and provides the action to be performed at the next timestep. You are predicting the best action(s) to take. The output in three parts describes the action for:
 
 	#.	The HVAC setpoint
@@ -79,32 +81,87 @@ The resulting action should be a list (or array) that is 3 entries long, and eac
 Once you change the submission/submission.py file no further changes need to be made to make a valid submission.
 
 Testing your submission (locally)
--------------------------------------------
+---------------------------------
+
 To test your agent you can run the same simulation setup as the official competition on sandbox data. In real life you won’t be able to test performance on the real (future) weather data before deployment, you only have data from the past. Therefore the data we use to officially score you will be “new”, never seen before weather data (but with the same location and weather trends).
 
-	* The steps to ensure the submission file is valid (i.e. no changes have been made that will break the submission):
+Testing submission validity using Docker
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-		#.	Open the Terminal (Mac) or Command Prompt (Windows) application and copy and paste the following commands into the window. Each time press <Enter> to run the command.
-		
-			* Optional: Change into the Documents folder. When you open Terminal/Command you will likely be in the home (or 'C://' drive), but you can change to Documents with ``$ cd Documents`` 
-		
-		#. 	Clone the repository using ``$ git clone https://github.com/cugriffinlab/your-username-gnomes.git``
-		#.	Change to the current working directory using ``$ cd your-username-gnomes``
-		#.	Build the tests using ``$ docker-compose -f ./testing/docker-compose.yml build`` (make sure Docker is open on your computer).
-		#.	Run the tests using ``$ docker-compose -f ./testing/docker-compose.yml up --abort-on-container-exit``. Submissions must pass all tests!
+We use Docker to manage the dependencies of the DRAGG engine. Note, this Docker impelentation is only officially supported on intel-based hardware. For other hardware, such as M1 Apple computers, use the non-docker instructions in the next section.
 
-	* The steps for self-evaluation are as follows:
+	#.	Open the Terminal (Mac) or Command Prompt (Windows) application and copy and paste the following commands into the window. Each time press <Enter> to run the command.
+	
+		* Optional: Change into the Documents folder. When you open Terminal/Command you will likely be in the home (or 'C://' drive), but you can change to Documents with ``$ cd Documents`` 
+	
+	#. 	Clone the repository using ``$ git clone https://github.com/cugriffinlab/your-username-gnomes.git``
+	#.	Change to the current working directory using ``$ cd your-username-gnomes``
+	#.	Use Docker to build the tests using ``$ docker-compose -f ./testing/docker-compose.yml build`` (make sure Docker is open on your computer).
+	#.	Use Docker to run the tests using ``$ docker-compose -f ./testing/docker-compose.yml up --abort-on-container-exit``. Submissions must pass all tests!
 
-		#.	Open the Terminal (Mac) or Command Prompt (Windows) application and copy and paste the following commands into the window. Each time press <Enter> to run the command.
-		
-			* Optional: Change into the Documents folder. When you open Terminal/Command you will likely be in the home (or 'C://' drive), but you can change to Documents with ``$ cd Documents`` 
-		
-		#. 	Clone the repository using ``$ git clone https://github.com/cugriffinlab/your-username-gnomes.git``
-		#.	Change to the current working directory using ``$ cd your-username-gnomes``
-		#.	Build the simulation using ``$ docker-compose -f ./sandbox/docker-compose.yml build`` (make sure Docker is open on your computer).
-		#.	Run the simulation using ``$ docker-compose -f ./sandbox/docker-compose.yml up --abort-on-container-exit``
-		#.  The results of the simulation are in the folder ``sandbox/outputs``. 
-		
+Testing submission validity for non-docker setups
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This section is only to be used for non-intel setups.
+
+	#. Follow steps 1-3 in the previous section
+
+	#. Install python using `this tutorial <https://docs.python.org/3/using/mac.html>`_.
+
+	#. Install DRAGG engine using ``$ pip install dragg``
+
+	#. Install the DRAGG competition engine using ``$ pip install dragg-comp``
+
+	#. Install your submission using ``$ pip install -e .``
+
+	#. Test your submission by running ``$ python ./testing/test_submission.py``
+
+Self-evaluation testing with Docker
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We use Docker to manage the dependencies of the DRAGG engine. Note, this Docker impelentation is only officially supported on intel-based hardware. For other hardware, see the next section.
+
+	#.	Open the Terminal (Mac) or Command Prompt (Windows) application and copy and paste the following commands into the window. Each time press <Enter> to run the command.
+	
+		* Optional: Change into the Documents folder. When you open Terminal/Command you will likely be in the home (or 'C://' drive), but you can change to Documents with ``$ cd Documents`` 
+	
+	#. 	Clone the repository using ``$ git clone https://github.com/cugriffinlab/your-username-gnomes.git``
+	#.	Change to the current working directory using ``$ cd your-username-gnomes``
+	#.	Build the simulation using ``$ docker-compose -f ./sandbox/docker-compose.yml build`` (make sure Docker is open on your computer).
+	#.	Run the simulation using ``$ docker-compose -f ./sandbox/docker-compose.yml up --abort-on-container-exit``
+	#.  The results of the simulation are in the folder ``sandbox/outputs``. 
+
+Self-evaluation testing for non-docker setups
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This section is only to be used for non-intel setups.
+
+	#. Follow steps 1-3 in the previous section
+
+	#. Install python using `this tutorial <https://docs.python.org/3/using/mac.html>`_.
+
+	#. Install DRAGG engine using ``$ pip install dragg``
+
+	#. Install the DRAGG competition engine using ``$ pip install dragg-comp``
+
+	#. Install your submission using ``$ pip install -e .``
+
+	#. Install redis from `here <https://redis.io/download/>_`
+
+		* Once you have installed redis, start the server using ``$ redis-server``
+
+		* In another terminal window, you should be able to call ``$ redis-cli PING`` which should return ``PONG``.
+
+	#. Install redis' python package using ``$ pip install redis``
+
+	#. Open two new terminal windows
+
+		* In each window, change the directory to the sandbox simulation folder using ``$ cd <your-username-gnomes>/sandbox/simulation``
+	
+		* In one terminal window, start the player submission using ``$ python run_player.py``
+
+		* In the other terminal window, run the simualtion using ``$ python run_aggregator.py``
+
 ..
 	[TODO Ash to write more about results, when decided]
 
