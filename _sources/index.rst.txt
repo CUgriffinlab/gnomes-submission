@@ -1,10 +1,7 @@
 Welcome to GNOMES4Homes
 =======================
 
-Motivation for the Competition
---------------------------------------------------------
-[Kyri to write?]
-
+This competition tests your knowledge of home energy management systems and reinforcment learning!
 
 Contents
 --------
