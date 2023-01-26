@@ -11,13 +11,13 @@ class MockPlayerHome:
     def __init__(self):
         self.action_space = gym.spaces.Box(-1 * np.ones(3), np.ones(3))
         self.obs_dict = {
-            "t_in_current": True,
-            "t_out_current": True,
+            "t_in": True,
+            "t_out": True,
             "t_out_6hr": True,
             "t_out_12hr": True,
-            "h_out": True,
-            "h_out_6hr": True,
-            "h_out_12hr": True,
+            "ghi": True,
+            "ghi_6hr": True,
+            "ghi_12hr": True,
             "time_of_day": True,
             "day_of_week": True,
             "is_holiday": True,
