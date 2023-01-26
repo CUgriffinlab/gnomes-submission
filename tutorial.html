@@ -161,13 +161,14 @@
 <p>For a complete submission you should customize the <cite>predict()</cite> function to determine an action for your gnome home to take. In both of these functions you may use any of the available observations about your home. Here is a list of the valid keys to <cite>home.obs_dict</cite>:</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p>“t_in_current”, current indoor temperature (deg C)</p></li>
-<li><p>“t_out_current”, current indoor temperature (deg C)</p></li>
+<li><p>“t_in”, current indoor temperature (deg C)</p></li>
+<li><p>“t_wh”, current temperature of the hot water tank (deg C)</p></li>
+<li><p>“t_out”, current indoor temperature (deg C)</p></li>
 <li><p>“t_out_6hr”, predicted outdoor temperature in 6 hrs (deg C)</p></li>
 <li><p>“t_out_12hr”, predicted outdoor temperature in 12 hrs (deg C)</p></li>
-<li><p>“h_out”, current outdoor humidity (%)</p></li>
-<li><p>“h_out_6hr”, predicted outdoor humidity in 6 hrs (%)</p></li>
-<li><p>“h_out_12hr”, predicted outdoor humidity in 12 hrs (%)</p></li>
+<li><p>“ghi”, current outdoor humidity (%)</p></li>
+<li><p>“ghi_6hr”, predicted outdoor humidity in 6 hrs (%)</p></li>
+<li><p>“ghi_12hr”, predicted outdoor humidity in 12 hrs (%)</p></li>
 <li><p>“time_of_day”, time of day (0-24)</p></li>
 <li><p>“day_of_week”, day of week (0-6)</p></li>
 <li><p>“occupancy”, true/false value for occupancy status</p></li>
