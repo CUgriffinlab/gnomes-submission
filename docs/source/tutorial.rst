@@ -54,13 +54,14 @@ Creating your submission
 
 For a complete submission you should customize the `predict()` function to determine an action for your gnome home to take. In both of these functions you may use any of the available observations about your home. Here is a list of the valid keys to `home.obs_dict`:
 
-	#. "t_in_current", current indoor temperature (deg C)
-	#. "t_out_current", current indoor temperature (deg C)
+	#. "t_in", current indoor temperature (deg C)
+	#. "t_wh", current temperature of the hot water tank (deg C)
+	#. "t_out", current indoor temperature (deg C)
 	#. "t_out_6hr", predicted outdoor temperature in 6 hrs (deg C)
 	#. "t_out_12hr", predicted outdoor temperature in 12 hrs (deg C)
-	#. "h_out", current outdoor humidity (%)
-	#. "h_out_6hr", predicted outdoor humidity in 6 hrs (%)
-	#. "h_out_12hr", predicted outdoor humidity in 12 hrs (%)
+	#. "ghi", current outdoor humidity (%)
+	#. "ghi_6hr", predicted outdoor humidity in 6 hrs (%)
+	#. "ghi_12hr", predicted outdoor humidity in 12 hrs (%)
 	#. "time_of_day", time of day (0-24)
 	#. "day_of_week", day of week (0-6)
 	#. "occupancy", true/false value for occupancy status
