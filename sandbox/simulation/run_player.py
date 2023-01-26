@@ -5,6 +5,7 @@ from datetime import datetime
 import asyncio
 import argparse
 import pandas as pd
+import traceback
 
 from dragg_comp.player import PlayerHome
 
@@ -35,11 +36,12 @@ if __name__=="__main__":
 		toc = datetime.now()
 		print(toc-tic)
 	except:
+		print('Exception raised by this code: {}'.format(e))
+		print(traceback.format_exc())
 		df = pd.DataFrame(
 			{
-				'std_demand': ['Invalid Submission'],
-				'max_demand': ['Invalid Submission'],
-				'l2_dev_avg': ['Invalid Submission'],
+				'l2_norm': ['Invalid Submission'],
+				'contribution2peak': ['Invalid Submission'],
 			}
 		)
 		df.to_csv('./outputs/score.csv')
