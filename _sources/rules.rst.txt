@@ -12,7 +12,7 @@ Each team's entry will be run daily at 5 AM (MST) to provide feedback. Entries w
 .. image:: timeline.png
   :width: 600 
   
-  Note that a lower score is better! 
+  With your rankings, not raw scores, impacting your final score. Note that a lower score is better! 
 
 ----------------------------------
 Judging Criteria
