@@ -9,11 +9,6 @@ The competition is scheduled to launch Feb 1 and run until May 1 (with the first
 
 Each team's entry will be run daily at 5 AM (MST) to provide feedback. Entries will be officially scored weekly each Sunday and these results will be displayed on the public scoreboard. The final competition score will be a weighted average of past weekly scores (with more recent scores having significantly more weight). Specifically, your final score will comprise:
 
-.. image:: timeline.png
-  :width: 600 
-  
-  With your rankings, not raw scores, impacting your final score. Note that a lower score is better! 
-
 ----------------------------------
 Judging Criteria
 ----------------------------------
