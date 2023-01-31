@@ -109,10 +109,6 @@ This section is only to be used for non-intel setups.
 
 	#. Install python using `this tutorial <https://docs.python.org/3/using/mac.html>`_.
 
-	#. Install DRAGG engine using ``$ pip install dragg``
-
-	#. Install the DRAGG competition engine using ``$ pip install dragg-comp``
-
 	#. Install your submission using ``$ pip install -e .``
 
 	#. Test your submission by running ``$ python ./testing/test_submission.py``
@@ -139,21 +135,15 @@ This section is only to be used for non-intel setups.
 
 	#. Follow steps 1-3 in the previous section
 
-	#. Install python using `this tutorial <https://docs.python.org/3/using/mac.html>`_.
+	#. Install python (>=3.9) using `this tutorial <https://docs.python.org/3/using/mac.html>`_.
 
-	#. Install DRAGG engine using ``$ pip install dragg``
-
-	#. Install the DRAGG competition engine using ``$ pip install dragg-comp``
-
-	#. Install your submission using ``$ pip install -e .``
-
-	#. Install redis from `here <https://redis.io/download/>_`
+	#. Install redis from `here <https://redis.io/download/>`_.
 
 		* Once you have installed redis, start the server using ``$ redis-server``
 
 		* In another terminal window, you should be able to call ``$ redis-cli PING`` which should return ``PONG``.
 
-	#. Install redis' python package using ``$ pip install redis``
+	#. Install your submission using ``$ pip install -e .``
 
 	#. Open two new terminal windows
 
