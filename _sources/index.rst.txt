@@ -11,5 +11,4 @@ Contents
 
    overview
    tutorial
-   rl_tutorial
    rules
