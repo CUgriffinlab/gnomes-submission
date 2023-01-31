@@ -1,7 +1,7 @@
 Welcome to GNOMES4Homes
 =======================
 
-This competition tests your knowledge of home energy management systems and reinforcment learning!
+This competition tests your knowledge of home energy management systems and reinforcment learning! To enter, please click on Tutorial of Submission on the left.
 
 Contents
 --------

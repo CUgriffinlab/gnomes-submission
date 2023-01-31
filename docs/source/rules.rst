@@ -5,9 +5,14 @@ Competition Rules and Regulations
   :width: 200 
 This competition is limited to currently enrolled undergraduate students at The University of Colorado Boulder (CU Boulder) under good academic standing. Teams can be comprised of 1 or 2 students, from any college or department at CU Boulder. 
 
-The competition is scheduled to launch Feb 1 and run until May 1. Teams may use the Sandbox and familiarize themselves with the system ahead of time. 
+The competition is scheduled to launch Feb 1 and run until May 1 (with the first "official scored entry" on Feb. 12). Teams may use the Sandbox and familiarize themselves with the system ahead of time. 
 
-Each team's entry will be run daily at 5 AM (MST) to provide feedback. Entries will be officially scored weekly each Sunday and these results will be displayed on the public scoreboard. The final competition score will be a weighted average of past weekly scores (with more recent scores having significantly more weight).
+Each team's entry will be run daily at 5 AM (MST) to provide feedback. Entries will be officially scored weekly each Sunday and these results will be displayed on the public scoreboard. The final competition score will be a weighted average of past weekly scores (with more recent scores having significantly more weight). Specifically, your final score will comprise:
+
+.. image:: timeline.png
+  :width: 600 
+  
+With your rankings, not raw scores, impacting your final score. Note that a lower score is better! 
 
 ----------------------------------
 Judging Criteria
@@ -21,7 +26,7 @@ Criteria:
 - Golden Gnome Award (competition administrators choice award based on a vote. Criteria may include most innovative, highest risk/reward strategy, most improved, etc.) : $2000
 
 .. image:: score.png
-  :width: 600 
+  :width: 500 
 
 Note that a team may only win in one of the above categories. Thus, four different teams will receive prizes.
 
