@@ -15,14 +15,16 @@ def predict(home):
     list
         List of actions corresponding to hvac, wh, and electric vehicle
     """
-    # Rule-based control
     if home.obs_dict['occupancy_status'] == 0:  # no one home
         hvac_action = 0  # neutral, leave the hvac alone
         wh_action = -1  # turn off the water heater
         ev_action = 1  # charge the car
-        action = [hvac_action, wh_action, ev_action]
 
     else:  # Someone is home
-        action = home.action_space.sample()  # choose a random action
+        hvac_action = 0  # no action
+        wh_action = 0  # no action
+        ev_action = 0  # no action
+
+    action = [hvac_action, wh_action, ev_action]
 
     return action
