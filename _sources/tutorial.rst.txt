@@ -41,7 +41,7 @@ Where you replace "FIRSTNAME LASTNAME" "YOURNAME" with your desired name/email.
 	* Copy this token! If you forget it you might need to redo the following steps.
 	* Set the remote to be a new URL that has read/write permissions to your Github account.
 	* In your terminal, from the directory named YOUR-USERNAME-gnomes, use the following command, replacing the YOUR-USERNAME and PERSONAL-ACCESS-TOKEN fields:
-`` $ git remote set-url origin https://YOUR-USERNAME:PERSONAL-ACCESS-TOKEN@github.com/cugriffinlab/YOUR-USERNAME-gnomes.git``
+``$ git remote set-url origin https://YOUR-USERNAME:PERSONAL-ACCESS-TOKEN@github.com/cugriffinlab/YOUR-USERNAME-gnomes.git``
 
 
 #. Edit the submission file as described below and then commit/push them to your GitHub repository:
@@ -126,7 +126,8 @@ We use Docker to manage the dependencies of the DRAGG engine. Note, this Docker 
 	#.	Change to the current working directory using ``$ cd your-username-gnomes``
 	#.	Build the simulation using ``$ docker-compose -f ./sandbox/docker-compose.yml build`` (make sure Docker is open on your computer).
 	#.	Run the simulation using ``$ docker-compose -f ./sandbox/docker-compose.yml up --abort-on-container-exit``
-	#.  The results of the simulation are in the folder ``sandbox/outputs``. 
+	#.  	The results of the simulation are in the folder ``sandbox/outputs``. 
+	#. 	Hint: You may find it helpful to modify the start and end dates in sandbox/simulation/data/config.toml which will generate more training data for you and your agent.
 
 Self-evaluation testing for non-docker setups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -154,10 +155,11 @@ This section is only to be used for non-intel setups.
 		* In the other terminal window, run the simualtion using ``$ python run_aggregator.py``
 
 ..
-	[TODO Ash to write more about results, when decided]
 
 Submitting and receiving official feedback
 -----------------------------------------------------------
-Your submission file must be updated and pushed to your repository in order to get official feedback. The official repository for the GNOMES competition will automatically evaluate all players’ submissions at 5AM Mountain Standard Time, if and only if their GitHub repositories are updated.
+Your submission file must be updated and pushed to your repository in order to get official feedback. The official repository for the GNOMES competition will automatically evaluate all players’ submissions daily at 5AM Mountain Standard Time, if and only if their GitHub repositories are updated.
+
+We will update the testing data set weekly (on Monday) after the scores are recorded for the week.
 
 Check your score here! https://cugriffinlab.github.io/gnomes-admin/

@@ -143,7 +143,7 @@
 </dl>
 </li>
 </ol>
-<p>`` $ git remote set-url origin <a class="reference external" href="https://YOUR-USERNAME:PERSONAL-ACCESS-TOKEN&#64;github.com/cugriffinlab/YOUR-USERNAME-gnomes">https://YOUR-USERNAME:PERSONAL-ACCESS-TOKEN&#64;github.com/cugriffinlab/YOUR-USERNAME-gnomes</a>.git``</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">remote</span> <span class="pre">set-url</span> <span class="pre">origin</span> <span class="pre">https://YOUR-USERNAME:PERSONAL-ACCESS-TOKEN&#64;github.com/cugriffinlab/YOUR-USERNAME-gnomes.git</span></code></p>
 <ol class="arabic">
 <li><p>Edit the submission file as described below and then commit/push them to your GitHub repository:</p>
 <blockquote>
@@ -236,6 +236,7 @@
 <li><p>Build the simulation using <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">./sandbox/docker-compose.yml</span> <span class="pre">build</span></code> (make sure Docker is open on your computer).</p></li>
 <li><p>Run the simulation using <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">./sandbox/docker-compose.yml</span> <span class="pre">up</span> <span class="pre">--abort-on-container-exit</span></code></p></li>
 <li><p>The results of the simulation are in the folder <code class="docutils literal notranslate"><span class="pre">sandbox/outputs</span></code>.</p></li>
+<li><p>Hint: You may find it helpful to modify the start and end dates in sandbox/simulation/data/config.toml which will generate more training data for you and your agent.</p></li>
 </ol>
 </div></blockquote>
 </div>
@@ -270,7 +271,8 @@
 </div>
 <div class="section" id="submitting-and-receiving-official-feedback">
 <h2>Submitting and receiving official feedback<a class="headerlink" href="#submitting-and-receiving-official-feedback" title="Permalink to this headline">¶</a></h2>
-<p>Your submission file must be updated and pushed to your repository in order to get official feedback. The official repository for the GNOMES competition will automatically evaluate all players’ submissions at 5AM Mountain Standard Time, if and only if their GitHub repositories are updated.</p>
+<p>Your submission file must be updated and pushed to your repository in order to get official feedback. The official repository for the GNOMES competition will automatically evaluate all players’ submissions daily at 5AM Mountain Standard Time, if and only if their GitHub repositories are updated.</p>
+<p>We will update the testing data set weekly (on Monday) after the scores are recorded for the week.</p>
 <p>Check your score here! <a class="reference external" href="https://cugriffinlab.github.io/gnomes-admin/">https://cugriffinlab.github.io/gnomes-admin/</a></p>
 </div>
 </div>
