@@ -8,6 +8,8 @@ import pandas as pd
 import traceback
 
 from dragg_comp.player import PlayerHome
+from dragg_comp.player_plot import PlayerPlotter
+import time
 
 REDIS_URL = "redis://localhost"
 
@@ -35,7 +37,14 @@ if __name__=="__main__":
 		print(env.score())
 		toc = datetime.now()
 		print(toc-tic)
-	except:
+
+		# Allow time for redis processes to stop
+		time.sleep(5)
+		
+		p = PlayerPlotter(res_file='./outputs/', conf_file='./outputs/all_homes-10-config.json')
+		p.main()
+
+	except Exception as e:
 		print('Exception raised by this code: {}'.format(e))
 		print(traceback.format_exc())
 		df = pd.DataFrame(
