@@ -3,6 +3,9 @@ Tutorial of Creating an RL Agent
 
 Reinforcement learning (RL) is a method of black-box machine learning, meaning that the RL agent can produce actions that optimize performance without knowing the mechanics of the environment. Like a child learning new things, RL agents can try an action, observe the outcome, and extrapolate about which actions are good and bad and when without ever knowing the exact physics behind transitions from one state to the next. As the human behind the RL agent you will have to give the RL agent clues to sort the outcomes into "good" and "bad". You will also be able to define other parameters of the RL agent such as which algorithms it uses, the amount of time you allow it to train, and which observations the RL should consider. We have provided a framework for you in the `rl_training.py` file and a description of how to implement it to create a custom agent below: 
 
+Components of submission
+----------------------------
+
 The reward* function
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 While the GNOMES competition will provide holistic feedback on your performance, the `reward(home)` function can be useful to provide step-by-step feedback on performance.
@@ -45,8 +48,11 @@ You may use any custom Python package in `rl_training.py`.
 
 *Indicates that you should keep these function names to make use of the ``train_player.py`` script. We will not be running ``train_player.py`` or similar as part of the submission/scoring process, so feel free to modify these scripts if they don't suit your application. We can offer limited one-on-one support (subject to the availability of the GNOMES support team) if you need help understanding how the environment is written and which variables are accessible for training.
 
+Training
+------------
+
 Training using docker
-======================================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1) Build the training using ``docker-compose -f ./training/docker-compose.yml build``
 
@@ -55,7 +61,7 @@ Training using docker
 3) The trained network should appear in submission as ``my_agent.zip``. You *must* include this file with your submission. 
 
 Training using non-docker
-========================================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1) Follow steps 1-4 from the [non-docker submission documentation]( https://cugriffinlab.github.io/gnomes-submission/tutorial.html#self-evaluation-testing-for-non-docker-setups )
 
@@ -69,7 +75,7 @@ Training using non-docker
     
 
 Submitting and receiving official feedback
-====================================================
+------------------------------------------------
 
 The process for testing your agent is identical to the process you used for an RBC controller but you will have to modify ``submission.py`` to load the agent. We will walk you through that process below:
 
