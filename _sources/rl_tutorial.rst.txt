@@ -46,7 +46,7 @@ Custom imports
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 You may use any custom Python package in `rl_training.py`. 
 
-*Indicates that you should keep these function names to make use of the ``train_player.py`` script. We will not be running ``train_player.py`` or similar as part of the submission/scoring process, so feel free to modify these scripts if they don't suit your application. We can offer limited one-on-one support (subject to the availability of the GNOMES support team) if you need help understanding how the environment is written and which variables are accessible for training.
+\*Indicates that you should keep these function names to make use of the ``train_player.py`` script. We will not be running ``train_player.py`` or similar as part of the submission/scoring process, so feel free to modify these scripts if they don't suit your application. We can offer limited one-on-one support (subject to the availability of the GNOMES support team) if you need help understanding how the environment is written and which variables are accessible for training.
 
 Training
 ------------
@@ -63,7 +63,7 @@ Training using docker
 Training using non-docker
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1) Follow steps 1-4 from the [non-docker submission documentation]( https://cugriffinlab.github.io/gnomes-submission/tutorial.html#self-evaluation-testing-for-non-docker-setups )
+1) Follow steps 1-4 from the `non-docker submission documentation <https://cugriffinlab.github.io/gnomes-submission/tutorial.html#self-evaluation-testing-for-non-docker-setups>`_.
 
 2) Open two new terminal windows
 

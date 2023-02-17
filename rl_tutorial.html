@@ -59,7 +59,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#submitting-and-receiving-official-feedback">Submitting and receiving official feedback</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#the-predict-function">The predict function</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#loading-external-files">Loading external files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">Custom imports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Custom imports</a></li>
 </ul>
 </li>
 </ul>
@@ -125,7 +125,7 @@
 <div class="section" id="custom-imports">
 <h3>Custom imports<a class="headerlink" href="#custom-imports" title="Permalink to this headline">¶</a></h3>
 <p>You may use any custom Python package in <cite>rl_training.py</cite>.</p>
-<p><a href="#id1"><span class="problematic" id="id2">*</span></a>Indicates that you should keep these function names to make use of the <code class="docutils literal notranslate"><span class="pre">train_player.py</span></code> script. We will not be running <code class="docutils literal notranslate"><span class="pre">train_player.py</span></code> or similar as part of the submission/scoring process, so feel free to modify these scripts if they don’t suit your application. We can offer limited one-on-one support (subject to the availability of the GNOMES support team) if you need help understanding how the environment is written and which variables are accessible for training.</p>
+<p>*Indicates that you should keep these function names to make use of the <code class="docutils literal notranslate"><span class="pre">train_player.py</span></code> script. We will not be running <code class="docutils literal notranslate"><span class="pre">train_player.py</span></code> or similar as part of the submission/scoring process, so feel free to modify these scripts if they don’t suit your application. We can offer limited one-on-one support (subject to the availability of the GNOMES support team) if you need help understanding how the environment is written and which variables are accessible for training.</p>
 </div>
 </div>
 <div class="section" id="training">
@@ -141,7 +141,7 @@
 <div class="section" id="training-using-non-docker">
 <h3>Training using non-docker<a class="headerlink" href="#training-using-non-docker" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li><p>Follow steps 1-4 from the [non-docker submission documentation]( <a class="reference external" href="https://cugriffinlab.github.io/gnomes-submission/tutorial.html#self-evaluation-testing-for-non-docker-setups">https://cugriffinlab.github.io/gnomes-submission/tutorial.html#self-evaluation-testing-for-non-docker-setups</a> )</p></li>
+<li><p>Follow steps 1-4 from the <a class="reference external" href="https://cugriffinlab.github.io/gnomes-submission/tutorial.html#self-evaluation-testing-for-non-docker-setups">non-docker submission documentation</a>.</p></li>
 <li><p>Open two new terminal windows</p></li>
 </ol>
 <ul class="simple">
@@ -163,8 +163,8 @@
 <p>Loading external files (such as a pre-trained agent) can be done by modifying the following line in <code class="docutils literal notranslate"><span class="pre">&lt;gnomes-your-username&gt;/setup.py</span></code>:</p>
 <p><code class="docutils literal notranslate"><span class="pre">package_data={'':</span> <span class="pre">['&lt;your-file-name-here&gt;']},</span></code></p>
 </div>
-<div class="section" id="id3">
-<h3>Custom imports<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h3>Custom imports<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>You may import any pip installable package to your submission function. Please note that we will not support manual dependecy conflict resolution so your submission package should therefore be pip installable. To include these functions in the pip install process we use for the scoring process modify <code class="docutils literal notranslate"><span class="pre">&lt;gnomes-your-username&gt;/setup.py</span></code> to include the custom package name under <code class="docutils literal notranslate"><span class="pre">&quot;install_requires&quot;</span></code>.</p>
 </div>
 </div>
