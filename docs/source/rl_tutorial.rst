@@ -1,7 +1,9 @@
 Tutorial of Creating an RL Agent
 ========================================
 
-Reinforcement learning (RL) is a method of black-box machine learning, meaning that the RL agent can produce actions that optimize performance without knowing the mechanics of the environment. Like a child learning new things, RL agents can try an action, observe the outcome, and extrapolate about which actions are good and bad and when without ever knowing the exact physics behind transitions from one state to the next. As the human behind the RL agent you will have to give the RL agent clues to sort the outcomes into "good" and "bad". You will also be able to define other parameters of the RL agent such as which algorithms it uses, the amount of time you allow it to train, and which observations the RL should consider. We have provided a framework for you in the `rl_training.py` file and a description of how to implement it to create a custom agent below: 
+Reinforcement learning (RL) is a method of black-box machine learning, meaning that the RL agent can produce actions that optimize performance without knowing the mechanics of the environment. Like a child learning new things, RL agents can try an action, observe the outcome, and extrapolate about which actions are good and bad and when without ever knowing the exact physics behind transitions from one state to the next. As the human behind the RL agent you will have to give the RL agent clues to sort the outcomes into "good" and "bad". You will also be able to define other parameters of the RL agent such as which algorithms it uses, the amount of time you allow it to train, and which observations the RL should consider. We have provided a framework for you in the ``rl_training.py`` file (found in the sister repo https://github.com/cugriffinglab/gnomes-rl) and a description of how to implement it to create a custom agent below: 
+
+We suggest that you copy the ``training\`` folder from the gnomes-rl repository.
 
 Components of submission
 ----------------------------
