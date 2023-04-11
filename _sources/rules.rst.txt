@@ -28,7 +28,7 @@ Criteria:
 .. image:: score.png
   :width: 500 
 
-Note that a team may only win in one of the above categories. Thus, four different teams will receive prizes.
+Note that a team may only win in one of the above categories. Thus, four different teams will receive prizes. **Note that in order to be eligible to prizes, an *active effort on the participant's part* has to have been made.**
 
 -----------------------------------
 Prizes
@@ -41,4 +41,4 @@ Prizes will be awarded in the form of one-time stipends (checks or direct deposi
 ---------------------------------------------
 Other Terms and Conditions
 ---------------------------------------------
-Any violations of CU's Honor Code will result in removal of the team from the competition. As this is meant to be a friendly environment and an education-focused competition, any displays of bullying, cyberbullying, or inappropriate behavior to other participants or the competition adminstrators may result in an immediate ban from the competition. As the competition is targeted towards undergraduates, any excessive assistance (some assistance may be okay - if you are unsure if something is classified as "excessive", please contact us) from graduate students, professors, or others who are not CU undergraduates may also result in removal of the team from the competition. Lastly, stipend payments are subject to any university restrictions. Please contact us if you are concerned about your eligibility in the competition.
+Any violations of CU's Honor Code will result in removal of the team from the competition. As this is meant to be a friendly environment and an education-focused competition, any displays of bullying, cyberbullying, or inappropriate behavior to other participants or the competition adminstrators may result in an immediate ban from the competition. As the competition is targeted towards undergraduates, any excessive assistance (some assistance may be okay - if you are unsure if something is classified as "excessive", please contact us) from graduate students, professors, or others who are not CU undergraduates may also result in removal of the team from the competition. Lastly, stipend payments are subject to any university restrictions. Rules and regulations regarding these payments is subject to change at any time. Please contact us if you are concerned about your eligibility in the competition.
